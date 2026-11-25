@@ -1,4 +1,6 @@
 # Conceptual / systems explainer
-Use for networking, operating systems, distributed systems, software architectures.
+Use for networking, operating systems, distributed systems, software architectures, and model architectures.
 
 Sequence: concrete problem → mental model → actors/state → step-by-step trace → boundary cases → tradeoffs → diagnostic or exercise. Show state transitions, timelines, before/after inputs, and exceptions. Explain what a figure omits and distinguish conceptual simplification from real protocol/implementation requirements. An explanatory diagram should answer a specific causal question, not repeat a chapter title. Provide pseudocode when it clarifies a process, explicitly labeled as original or sourced. Code is not mandatory for every section, but each learning objective needs a relevant check (trace prediction, scenario, experiment, or implementation).
+
+**Start from the familiar, change one assumption at a time.** When the new concept grows out of something the reader knows, begin with that familiar system and change exactly one assumption per step. Number the steps, and for each one say what changed and what that change buys or costs (Step 1: a classifier with fixed labels → Step 2: put the label into the input → Step 3: all labels in one prompt → Step 4: many questions over one state). A bridging table ("In the familiar system | In the new one") is often the fastest way to set up the starting point. See `references/reading-design.md`.
