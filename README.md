@@ -14,3 +14,10 @@ Copy `skills/illustrated-technical-guide/` into your Claude Code skills director
 `python examples/zimantic/labs/verify_concepts.py`
 
 Existing v14 regression tests and evaluation suite are retained. New source reconstruction instructions live in `skills/illustrated-technical-guide/references/repository-reconstruction.md`.
+
+
+## v16 Depth-first mechanism teaching
+The required reference `references/depth-first-teaching.md` separates short orientation from expanded mechanism traces and verified implementation. The optional structural checker is `scripts/depth_gate.py`; source/math/browser review remains mandatory. The companion full example lives in the separately downloadable Zimantic guide.
+
+
+**Zimantic v16 depth benchmark:** see `docs/V16_BENCHMARK.md`. The standalone depth-first guide is a separate example package.

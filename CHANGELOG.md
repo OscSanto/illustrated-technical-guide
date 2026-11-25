@@ -1,3 +1,10 @@
+# v16 — Depth-first teaching
+
+- Required mechanism traces with intermediate states, invariants, derivations, parameter variations and failure modes.
+- Reduced repetitive audit language in instructional prose while preserving provenance.
+- Added `depth_gate.py` (structural only) and teaching reference.
+- Expanded Zimantic exemplar with eight trace-level diagrams and detailed walkthroughs.
+
 # Changelog
 
 ## v15 — Zimantic source reconstruction

@@ -44,6 +44,9 @@ def validate(guide):
     objectives=manifest.get('learning_objectives',[])
     if not objectives:blockers.append('No learning objectives')
     chapters=manifest.get('chapters',[])
+    if not isinstance(chapters,list):
+        blockers.append('guide_manifest.json: chapters must be a list of chapter records, not a count')
+        chapters=[]
     if not chapters:blockers.append('No chapters')
     allowed={'hands-on','conceptual','mathematical','source-audit'}
     used=set()
