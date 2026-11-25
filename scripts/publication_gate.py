@@ -70,6 +70,14 @@ def main():
    for r in rows:
     if r.get('status')!='covered':errors.append(f"{r.get('claim_id')}: source ledger not covered")
     if not r.get('source_url') or not r.get('evidence'):errors.append(f"{r.get('claim_id')}: missing provenance")
+ # v10: independent provenance and source-fidelity structural audit.
+ try:
+  from source_fidelity_gate import audit as fidelity_audit
+  fidelity=fidelity_audit(root,args.html)
+  metrics['provenance_artifacts']=fidelity['metrics'].get('artifacts',0)
+  errors.extend('Provenance: '+e for e in fidelity['blockers'])
+ except Exception as e:
+  errors.append(f'Provenance gate could not run: {e}')
  report={'status':'PASS' if not errors else 'FAIL','metrics':metrics,'blockers':errors,'warnings':warnings,'scope':'Static checks plus self-reported review fields. Independent fact-check and screenshot inspection required.'}
  (root/'PUBLICATION_REPORT.json').write_text(json.dumps(report,indent=2))
  (root/'PUBLICATION_REPORT.md').write_text('# Publication gate: '+report['status']+'\n\n'+'\n'.join('- '+e for e in errors)+'\n\n## Warnings\n'+'\n'.join('- '+e for e in warnings)+'\n')

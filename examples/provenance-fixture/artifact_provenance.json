@@ -1,0 +1,30 @@
+{
+  "mode": "general",
+  "artifacts": [
+    {
+      "id": "EX01",
+      "html_id": "algorithm",
+      "type": "pseudocode",
+      "origin": "our_implementation",
+      "verification_status": "not_tested",
+      "visible_label": "Our implementation \u00b7 Pseudocode \u00b7 Not tested.",
+      "visible_label_in_html": true,
+      "explanation": "Created for teaching; not claimed to be TypeSafe code.",
+      "is_pseudocode": true,
+      "attributed_to_source": false
+    },
+    {
+      "id": "EX02",
+      "html_id": "arch",
+      "type": "architecture",
+      "origin": "hypothetical_example",
+      "verification_status": "illustrative",
+      "visible_label": "Hypothetical conceptual architecture \u00b7 Not confirmed Jev internals.",
+      "visible_label_in_html": true,
+      "explanation": "Hypothetical illustration, not a reconstruction of private internals.",
+      "system_is_proprietary": true,
+      "internal_mechanism_publicly_documented": false,
+      "attributed_to_source": false
+    }
+  ]
+}

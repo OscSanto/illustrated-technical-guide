@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "metrics": {
+    "html_ids": 77,
+    "figures_in_html": 12,
+    "headings": 39,
+    "provenance_artifacts": 0
+  },
+  "blockers": [
+    "research_inventory.json: unreadable ([Errno 2] No such file or directory: '/mnt/data/illustrated-technical-guide-v10/examples/jev-source-audit/research_inventory.json')",
+    "No research sources",
+    "No claim inventory",
+    "chapter_matrix.json: unreadable ([Errno 2] No such file or directory: '/mnt/data/illustrated-technical-guide-v10/examples/jev-source-audit/chapter_matrix.json')",
+    "No chapter coverage matrix",
+    "figure_storyboard.json: unreadable ([Errno 2] No such file or directory: '/mnt/data/illustrated-technical-guide-v10/examples/jev-source-audit/figure_storyboard.json')",
+    "No figure storyboard",
+    "Provenance: No artifact provenance entries",
+    "Provenance: Source-audit mode requires explicit source_coverage entries"
+  ],
+  "warnings": [],
+  "scope": "Static checks plus self-reported review fields. Independent fact-check and screenshot inspection required."
+}
