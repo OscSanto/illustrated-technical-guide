@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Research, write, illustrate, implement, test, and publish substantial original standalone HTML technical textbooks with a dynamic nested contents menu. Invoke when user asks for a comprehensive illustrated guide, detailed mathematical reconstruction, or technical learning microsite.
 ---
-# Illustrated Technical Guide v4 — research-to-publication
+# Illustrated Technical Guide v6 — research-to-publication
 
 ## Invocation
 Explicit in Claude Code: `/illustrated-technical-guide <topic>`. Implicit selection is possible when the description matches. The skill creates `index.html`, a source ledger, runnable examples, and a validation report. It must not deliver a skeletal overview as a completed textbook.
@@ -46,3 +46,21 @@ Check `QA_REPORT.md` for test scope and limitations.
 6. **Deliverables:** The HTML, source ledger, coverage report, executable lab, QA report, and complete skill ZIP. The skill remains general-purpose; this mode is an opt-in extension.
 
 Invocation: `/illustrated-technical-guide Reconstruct <URL> in source-audit mode, with a claim-by-claim coverage report.`
+
+
+## Illustration art direction — v6 (mandatory for both modes)
+The reference's strength is **editorial information design**, not generic flowchart boxes. Adopt the following *transferable visual principles* without copying the site's proprietary images, mascots, illustrations, or branding:
+
+1. **Figure storyboard before drawing.** For each conceptual bottleneck write: question the figure answers, one-sentence insight, components, labels, data provenance, and why text alone is insufficient. Omit ornamental images.
+2. **Editorial hierarchy.** Build an intentional figure with a short eyebrow/number, descriptive title, optional italic deck, 2–4 clearly composed visual regions, annotated mechanism, concise takeaway, and caption. Avoid anonymous chains of equal-sized rectangles.
+3. **Restrained illustrated palette.** Warm ivory paper, ink-dark typography, muted sage/teal for computation, dusty coral for warnings/outcomes, slate blue for comparisons, sand for inputs. Consistent color meaning across all figures. Never use color as the only distinction.
+4. **Visual craft.** Thin purposeful connectors, generous whitespace, subtle card borders, editorial serif headlines with clean sans labels and monospaced tensor/logit values; occasional hatched backgrounds and numbered circles. Avoid gradients, shiny dashboard cards, arbitrary icons, excessive rounded rectangles, or stock images.
+5. **Concrete detail.** Draw actual example inputs, option text, selected logits, tensor shapes, equations, percentages, and the before/after state. When comparing approaches, align their corresponding stages so the contrast is visible. Use tables/plots for sourced measurements; show axes, units, denominators and provenance.
+6. **Source integrity.** Every numerical annotation must be either directly sourced with a citation or explicitly labeled illustrative. Verify every number, equation, arrow, ordering, and clinical assertion against the source ledger. Never let an image generator invent benchmark results, temperatures, logit values, or scientific diagrams without review.
+7. **SVG-first for technical fidelity.** Prefer hand-authored SVG/HTML diagrams for equations, arrows, precise labels and accessibility. Image generation may be used for non-quantitative artistic illustrations or visual references, but verify and redraw all technical annotations. All images need useful alt text, captions, and mobile legibility.
+8. **Illustration diversity.** Choose the visual grammar for the question: annotated document, split-screen comparison, stepwise mechanism, mathematical geometry, tensor view, experiment plot, decision tree, failure-case comic, or real input/output trace. Do not use a repeated pipeline for every concept.
+9. **Figure-level QA.** At desktop and mobile widths inspect for clipping, legibility, incorrect labels, misplaced arrows, and accessibility. Maintain an illustration manifest with each figure's instructional role, provenance, and validation status. Flag untested browser rendering.
+10. **Density follows complexity.** Major conceptual transitions deserve figures; trivial paragraphs do not. Require explanation of *what to notice* before/after every figure.
+
+### Figure acceptance test
+A figure fails if its content can be replaced by “Input → Model → Output” without losing information. A figure passes when a reader can answer a specific question from it that the surrounding paragraph would otherwise leave ambiguous.
