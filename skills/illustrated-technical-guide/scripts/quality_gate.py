@@ -17,6 +17,42 @@ class Structure(HTMLParser):
         if tag=='figure':self.figures.append(a.get('id'))
         if 'data-artifact-type' in a:self.artifacts.append(a.get('id'))
 
+BADGE_EVIDENCE={'b-pub':'published','b-meas':'measured','b-inf':'inferred','b-self':'self_reported','b-lab':'our_lab'}
+
+def check_claim_badges(html,claims,blockers,warnings):
+    """Claim badges (references/reading-design.md): each badge names a real claim whose evidence matches."""
+    by_id={c.get('id'):c for c in claims}
+    badged=set()
+    for m in re.finditer(r'<span\b[^>]*\bclass="([^"]*\bbadge\b[^"]*)"[^>]*>',html):
+        tag,classes=m.group(0),m.group(1).split()
+        if 'badge' not in classes:continue
+        kind=next((c for c in classes if c in BADGE_EVIDENCE),None)
+        if 'data-legend' in tag:continue  # badge key or legend entry, not a claim
+        cm=re.search(r'\bdata-claim="([^"]+)"',tag)
+        if not cm:
+            warnings.append(f'Badge without data-claim: {tag}');continue
+        cid=cm.group(1)
+        if kind is None:blockers.append(f'Badge for claim {cid}: unknown badge class');continue
+        claim=by_id.get(cid)
+        if claim is None:blockers.append(f'Badge cites unknown claim {cid}');continue
+        if claim.get('evidence')!=BADGE_EVIDENCE[kind]:
+            blockers.append(f"Badge for claim {cid}: shows {BADGE_EVIDENCE[kind]} but research_inventory says {claim.get('evidence')}")
+        badged.add(cid)
+    if badged:
+        for c in claims:
+            if c.get('critical') and c.get('id') not in badged:
+                blockers.append(f"Critical claim {c.get('id')}: no badge in the HTML (the guide uses claim badges)")
+
+def check_ledes(html,warnings):
+    """Each chapter should open with a short lede paragraph right after its title."""
+    for m in re.finditer(r'<section\b[^>]*\bclass="[^"]*\bchapter\b[^"]*"[^>]*\bid="([^"]+)"[^>]*>(.*?)</section>',html,re.S):
+        sid,body=m.group(1),m.group(2)
+        if sid=='references' or 'refs' in m.group(0)[:200]:continue
+        lm=re.search(r'</h2>\s*<p\b[^>]*>(.*?)</p>',body,re.S)
+        if not lm:warnings.append(f'Chapter {sid}: no lede paragraph directly after the title');continue
+        words=len(re.sub(r'<[^>]+>',' ',lm.group(1)).split())
+        if words>60:warnings.append(f'Chapter {sid}: lede is {words} words; keep it to one or two sentences')
+
 def validate(guide):
     guide=Path(guide); blockers=[];warnings=[]; metrics={}
     def require_json(fname):
@@ -83,6 +119,8 @@ def validate(guide):
     for claim in sources.get('claims',[]):
         if claim.get('critical') and claim.get('status')!='verified':blockers.append(f"Critical claim {claim.get('id')}: not verified")
         if claim.get('destination_anchor') not in ids:blockers.append(f"Claim {claim.get('id')}: invalid destination")
+    check_claim_badges(html,sources.get('claims',[]),blockers,warnings)
+    check_ledes(html,warnings)
     storyboard=require_json('figure_storyboard.json')
     storyboard_ids=set()
     for f in storyboard.get('figures',[]):
@@ -92,6 +130,7 @@ def validate(guide):
             if not f.get(field):blockers.append(f'Figure {fid}: missing {field}')
         if f.get('review_status')!='approved':blockers.append(f'Figure {fid}: technical review pending')
         if f.get('desktop_review')!='passed' or f.get('mobile_review')!='passed':blockers.append(f'Figure {fid}: desktop/mobile review pending')
+        if 'animate' not in f:warnings.append(f'Figure {fid}: no animate decision recorded (see references/animated-flow-figures.md)')
     if not parser.figures:blockers.append('No instructional figures in HTML')
     for fid in parser.figures:
         if fid not in storyboard_ids:blockers.append(f'Figure {fid}: missing storyboard entry')
@@ -113,7 +152,7 @@ def validate(guide):
         from source_fidelity_gate import audit
         provenance=audit(guide,'index.html')
         blockers.extend('Provenance: '+msg for msg in provenance['blockers'])
-        declared={a.get('html_id') for a in (json.loads((guide/'artifact_provenance.json').read_text()).get('artifacts',[]))}
+        declared={a.get('html_id') for a in (json.loads((guide/'artifact_provenance.json').read_text(encoding='utf-8')).get('artifacts',[]))}
         for fid in parser.figures:
             if fid not in declared:blockers.append(f'Figure {fid}: missing provenance manifest entry')
     except Exception as e:blockers.append(f'Could not execute provenance checker: {e}')
