@@ -34,3 +34,15 @@ Check `QA_REPORT.md` for test scope and limitations.
 
 ## Reference example
 `examples/jev-guide.html` is an original Jev-like engineering textbook example. It is NOT a reconstruction of proprietary TypeSafe model weights or internal training procedure. Use it to inspect visual composition, explanation density, math, and source distinctions; do not copy its subject-specific content into unrelated guides.
+
+## Optional source-faithful reconstruction mode (v5)
+**Preserve the general illustrated textbook workflow above.** Enable this mode when the user supplies a reference URL/document or asks to audit/reproduce a specific technical project. Do not activate for generic subject explanations unless requested.
+
+1. **Source inventory gate:** Retrieve and read the entire primary reference, its linked official code/model cards where accessible, and record each section, numerical claim, table, dataset, hyperparameter, implementation detail, example, license, and limitation in `source_coverage.csv`. Never imply that a linked source was checked if it wasn't.
+2. **Coverage map:** For each source claim, assign an ID, source URL/section, exact numeric value, provenance (developer-reported / independently verified / inference / illustration), destination guide heading, and status (covered, partially covered, absent, unverifiable). Preserve negative findings and caveats.
+3. **Technical reconstruction:** Distinguish literal documented implementation from pedagogical NumPy/PyTorch demonstrations. Include published configurations and hyperparameters, input/output contracts, mathematical derivations, datasets and splits, evaluation definitions, full comparison tables where useful, and failure modes. Never present synthetic values as benchmark measurements.
+4. **No silent source drift:** Compare tables and values against the primary page. Flag discrepancies within the source (e.g. category counts not summing to reported totals) rather than repairing them silently. Do not substitute plausible model internals for documented details.
+5. **Audit gate:** Run a coverage checker on the ledger, execute runnable examples, verify table rows and navigation, record whether actual model weights/benchmarks and rendered browser screenshots were tested. Require 100% disposition of *critical* source claims; unresolved claims must be labeled, not quietly dropped.
+6. **Deliverables:** The HTML, source ledger, coverage report, executable lab, QA report, and complete skill ZIP. The skill remains general-purpose; this mode is an opt-in extension.
+
+Invocation: `/illustrated-technical-guide Reconstruct <URL> in source-audit mode, with a claim-by-claim coverage report.`

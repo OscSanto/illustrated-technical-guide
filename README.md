@@ -1,17 +1,10 @@
-# Illustrated Technical Guide — v4
+# Illustrated Technical Guide v5
 
-Install this directory as `~/.claude/skills/illustrated-technical-guide/` or `.claude/skills/illustrated-technical-guide/`.
+Two modes in one Claude Code skill:
 
-Explicit invocation: `/illustrated-technical-guide Explain Jev-like decision models with mathematics, runnable code, original diagrams, and evaluations.`
+- **General illustrated textbook**: `/illustrated-technical-guide Explain transformer attention from first principles`.
+- **Source-audited reconstruction**: `/illustrated-technical-guide Reconstruct https://www.thelion.ai/projects/meddecider/ in source-audit mode`.
 
-Implicit invocation: ask Claude Code for a comprehensive illustrated HTML technical guide; skill matching is not guaranteed.
+The second mode does not replace the first. Install this directory as `.claude/skills/illustrated-technical-guide/`. Open `examples/meddecider-guide.html` directly in a browser. `scripts/upgrade_meddecider.py` documents the deterministic enrichment of the prior test page.
 
-- `SKILL.md` — research-to-publication workflow and acceptance criteria.
-- `template.html` — original responsive editorial template.
-- `examples/jev-guide.html` — expanded 14-chapter demonstration with a pre-rendered nested TOC.
-- `scripts/test_lab.py` — executable numerical assertions.
-- `scripts/validate_guide.py` — static HTML audit.
-- `sources.md` — source ledger and confidence boundaries.
-- `QA_REPORT.md` — results and limitations.
-
-The example teaches a **Jev-like** model; it does not reproduce unpublished TypeSafe model internals.
+Use `python scripts/test_source_coverage.py` and `python examples/reproduction_demo.py` to check the package.

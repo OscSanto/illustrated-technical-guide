@@ -1,17 +1,16 @@
-# Version 4 test report
+# MedDecider source-audit retest — November 23, 2026
 
-## Comparison target
-TheLion.AI's original guide reports 15 chapters, 44 illustrations, and 70 cited sources. This original reproduction test has 14 substantive chapters and 12 figures. It remains less comprehensive than the reference, especially on open-model comparisons and independent empirical benchmarking.
+Reference: https://www.thelion.ai/projects/meddecider/
 
-## Validated
-- HTML heading/anchor consistency and static structural audit.
-- Pre-rendered, nested desktop/mobile TOC links plus JavaScript enhancement.
-- Original SVG figures with accessibility labels and captions.
-- Six numerical invariants in the standalone Python lab (softmax, loss reduction, score expectation, permutation TV, and decision threshold).
-- No CDN, external JS, or stylesheet required for offline HTML display.
+## Executed checks
+- 20 critical source claims tracked in `source_coverage.csv`, each matched to guide text; no missing critical ledger items.
+- 14 chapters and 13 original figures; all internal links resolve.
+- NumPy scoring lab passed normalization, non-negativity, reversal remapping and cross-entropy checks.
+- Expanded the earlier guide with model configuration, training mix, exact reported hyperparameters, calibration settings, clinical use cases, full family benchmark matrix, confidence interval, prompt-injection results, licensing and limitations.
+- Noted a source-level arithmetic discrepancy: displayed 4B dataset components sum to 118,600 versus reported 119,034.
 
-## Not validated
-- No pixel-level desktop/mobile browser screenshot comparison was run.
-- No external Jev model inference or latency benchmark was run.
-- Proprietary model internals are not available and are not reproduced.
-- Editorial content is substantially expanded, but not an exhaustive recreation of the reference's 70-source research coverage.
+## Limits
+- The 20-claim ledger is a prioritized coverage audit, **not an exhaustive sentence-by-sentence verification** of every claim on the source page.
+- Reported benchmarks, latency and clinical use-case probabilities have not been independently reproduced. Model weights were not downloaded; no full LoRA training was performed.
+- No headless browser screenshots or mobile visual comparison were executed. HTML was parsed and anchors validated, but rendering is not certified.
+- Clinical applications are research examples only and are not validated for patient care.
