@@ -1,27 +1,25 @@
-# Illustrated Technical Guide v15 — Source-faithful repository reconstruction
+# Illustrated Technical Guide
 
-This preview preserves the v14 generic textbook generator and optional source reconstruction while adding `references/repository-reconstruction.md` for real codebases.
+A Claude Code skill that writes deeply explained, illustrated, testable learning guides as single portable HTML pages. It can also reconstruct a supplied article, paper or code repository faithfully, with claim-level provenance.
 
-## New example
-Open `examples/zimantic/index.html` to study the [OscSanto/zimantic](https://github.com/OscSanto/zimantic) repository at commit `40c404f6dd409dc0e1d80fb89f9212b99a8542f3`.
-
-The 11-chapter HTML guide contains 10 original offline SVGs, SQL/algorithm educational fixtures, a benchmark plan, source coverage, provenance and a mobile zoom viewer. It is DRAFT because real ZIM/ONNX and Raspberry Pi benchmarks were not executed here.
+Each dense technical chapter traces one real input through the mechanism it teaches. Every figure, code block and factual claim is labelled with where it came from (published, measured, inferred, self-reported, or computed in the guide's own lab), and structural gates check those labels before a guide is called finished.
 
 ## Install
-Copy `skills/illustrated-technical-guide/` into your Claude Code skills directory. The `SKILL.md` is the entry point; its `references/` and other files must remain alongside it. This is the only thing you need to install.
+Copy `skills/illustrated-technical-guide/` into your Claude Code skills directory. `SKILL.md` is the entry point; its `references/` and other files must stay alongside it. This is the only thing you need to install.
 
 **Optional companion skills.** The skill works fully without them and falls back to hand-written SVG:
 - [dashmotion](https://github.com/csthink/dashmotion) (MIT). It adds animated flow figures (dots travelling through a system). Install it with `npx skills add csthink/dashmotion -a claude-code -g`. See `references/animated-flow-figures.md`.
 - [AntV Infographic](https://github.com/antvis/Infographic) (MIT). It is experimental and untested. See `references/antv-illustration-engine.md`.
 
-## Run educational verification
-`python examples/zimantic/labs/verify_concepts.py`
+## What's in the skill
+- `SKILL.md`: the working agreement, step by step.
+- `profiles/`: hands-on, conceptual, mathematical and source-audit chapter patterns.
+- `references/`: depth-first teaching, reading design, repository reconstruction, provenance, illustrations and animation guidance.
+- `templates/standalone.html`: the page template, with the header font embedded so guides work offline.
+- `scripts/`: `quality_gate.py` (main gate), `depth_gate.py`, `source_fidelity_gate.py`.
 
-Existing v14 regression tests and evaluation suite are retained. New source reconstruction instructions live in `skills/illustrated-technical-guide/references/repository-reconstruction.md`.
+## Example
+`examples/zimantic/index.html` explains the [OscSanto/zimantic](https://github.com/OscSanto/zimantic) repository at commit `40c404f6dd409dc0e1d80fb89f9212b99a8542f3`. Run its concept checks with `python examples/zimantic/labs/verify_concepts.py`. The depth-first benchmark for that guide is in `docs/V16_BENCHMARK.md`.
 
-
-## v16 Depth-first mechanism teaching
-The required reference `references/depth-first-teaching.md` separates short orientation from expanded mechanism traces and verified implementation. The optional structural checker is `scripts/depth_gate.py`; source/math/browser review remains mandatory. The companion full example lives in the separately downloadable Zimantic guide.
-
-
-**Zimantic v16 depth benchmark:** see `docs/V16_BENCHMARK.md`. The standalone depth-first guide is a separate example package.
+## Tests
+`make test` (or `python -m unittest discover -s tests -v`) runs the gate tests. `make fixture` runs the quality gate on the passing fixture. See `evals/` for the multi-topic evaluation harness.

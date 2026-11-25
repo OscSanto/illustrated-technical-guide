@@ -1,4 +1,4 @@
-# v12 experimental AntV illustration engine
+# Experimental AntV illustration engine
 
 This is an **optional rendering subsystem** for the general illustrated textbook generator. It does not replace pedagogy, provenance, chapter tests, or source reconstruction. No external renderer may assert that a diagram is technically correct.
 
@@ -37,4 +37,4 @@ Across PostgreSQL joins, transformer attention, and decision-model output compar
 
 ## Evidence and licensing
 
-Official AntV project: https://github.com/antvis/Infographic (MIT license). Official skills: `skills/infographic-creator` and `skills/infographic-syntax-creator`. Its README reports declarative DSL, approximately 200 templates/components/layouts, SVG rendering, theme and editor support. **Neither an npm install nor AntV visual rendering was verified in this environment for the initial v12 experiment.**
+Official AntV project: https://github.com/antvis/Infographic (MIT license). Official skills: `skills/infographic-creator` and `skills/infographic-syntax-creator`. Its README reports declarative DSL, approximately 200 templates/components/layouts, SVG rendering, theme and editor support. **Neither an npm install nor AntV visual rendering was verified in this environment for the initial experiment.**

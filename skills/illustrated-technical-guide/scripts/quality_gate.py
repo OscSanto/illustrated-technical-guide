@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v11 profile-aware quality gate. Structural evidence validation, NOT a fact checker.
+"""Profile-aware quality gate. Structural evidence validation, NOT a fact checker.
 No third-party dependencies. Generates QUALITY_REPORT.json/QUALITY_REPORT.md.
 """
 import argparse, json, csv, re, sys

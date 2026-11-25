@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Source fidelity and artifact provenance gate (v10). Fail closed on missing provenance.
+"""Source fidelity and artifact provenance gate. Fail closed on missing provenance.
 Checks manifest-to-HTML links and declarations; does NOT fact-check source claims.
 """
 import argparse, json, re, sys

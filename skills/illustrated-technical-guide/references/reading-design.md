@@ -1,8 +1,8 @@
 # Reading design: page, prose and claim labels
 
-A guide must be pleasant to read for an hour. The page keeps the skill's v16 design; the header typography and the writing habits below come from studying TheLion.AI's "Visual guide to Jev-like models" (Nov 2026). All of it is built into `templates/standalone.html`, so start from the template; do not restyle it per guide.
+A guide must be pleasant to read for an hour. The page keeps the skill's original design; the header typography and the writing habits below come from studying TheLion.AI's "Visual guide to Jev-like models" (Nov 2026). All of it is built into `templates/standalone.html`, so start from the template; do not restyle it per guide.
 
-## Page (v16 design)
+## Page
 
 - **Layout.** A 220 px sticky contents column (chapters plus their subsections, the current one highlighted) beside a 760 px reading column. Below 850 px the contents become a collapsible list at the top.
 - **Body.** Inter or the system sans-serif, 16 px, line height 1.75, dark grey on warm paper (`#faf9f6`).

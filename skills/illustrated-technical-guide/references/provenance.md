@@ -1,7 +1,7 @@
-# Provenance standard (v10)
+# Provenance standard
 
 
-## v10 — mandatory source fidelity and provenance contract
+## Mandatory source fidelity and provenance contract
 
 **Applies to both modes.** In general mode, label all original pedagogical artifacts. In source-audit mode, additionally inventory the primary article in full and map its specific systems, reported results, algorithms, and caveats. Do not merge distinct implementations into a generic architecture.
 

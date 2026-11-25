@@ -70,7 +70,7 @@ def main():
    for r in rows:
     if r.get('status')!='covered':errors.append(f"{r.get('claim_id')}: source ledger not covered")
     if not r.get('source_url') or not r.get('evidence'):errors.append(f"{r.get('claim_id')}: missing provenance")
- # v10: independent provenance and source-fidelity structural audit.
+ # Independent provenance and source-fidelity structural audit.
  try:
   from source_fidelity_gate import audit as fidelity_audit
   fidelity=fidelity_audit(root,args.html)

@@ -1,4 +1,4 @@
-# Repository Reconstruction — source-faithful learning workflow (v15)
+# Repository Reconstruction — source-faithful learning workflow
 
 ## Activation
 A named GitHub/code repository plus an explanation, architecture, learning, walkthrough or component-specific request activates repository reconstruction. This is an OPTIONAL mode; the default general-purpose illustrated textbook generator remains unchanged.

@@ -1,4 +1,4 @@
-# Depth-first teaching standard (v16)
+# Depth-first teaching standard
 
 ## Core rule
 **Do not stop when a concept has been introduced; stop when its mechanism can be reconstructed.** A page that lists component names, summarizes a diagram, or supplies a formula without tracing intermediate states is not a finished technical chapter.

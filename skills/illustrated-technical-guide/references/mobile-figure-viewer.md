@@ -1,4 +1,4 @@
-# Responsive technical figure viewer (v13)
+# Responsive technical figure viewer
 
 A wide technical figure must not silently scale its labels to unreadable mobile sizes. Every important figure must expose a discoverable, keyboard-accessible **Open readable figure** action.
 

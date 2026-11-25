@@ -1,4 +1,4 @@
-# Cross-topic visual evaluation (v14)
+# Cross-topic visual evaluation
 
 Test two or more unrelated technical domains for the same illustration design system, not only multiple diagrams from one source. A legitimate test includes: (1) input + expected output with arithmetic or relational assertions; (2) rendered desktop and mobile screenshots; (3) viewport-overflow check; (4) accessible zoom and pan; (5) consistency of typography/color; (6) visible provenance and stated source boundaries; (7) an accurate AntV status: `NOT_EXECUTED` if the runtime is unavailable.
 
