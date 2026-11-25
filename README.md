@@ -8,7 +8,11 @@ Open `examples/zimantic/index.html` to study the [OscSanto/zimantic](https://git
 The 11-chapter HTML guide contains 10 original offline SVGs, SQL/algorithm educational fixtures, a benchmark plan, source coverage, provenance and a mobile zoom viewer. It is DRAFT because real ZIM/ONNX and Raspberry Pi benchmarks were not executed here.
 
 ## Install
-Copy `skills/illustrated-technical-guide/` into your Claude Code skills directory. The `SKILL.md` is the entry point; its `references/` and other files must remain alongside it.
+Copy `skills/illustrated-technical-guide/` into your Claude Code skills directory. The `SKILL.md` is the entry point; its `references/` and other files must remain alongside it. This is the only thing you need to install.
+
+**Optional companion skills.** The skill works fully without them and falls back to hand-written SVG:
+- [dashmotion](https://github.com/csthink/dashmotion) (MIT). It adds animated flow figures (dots travelling through a system). Install it with `npx skills add csthink/dashmotion -a claude-code -g`. See `references/animated-flow-figures.md`.
+- [AntV Infographic](https://github.com/antvis/Infographic) (MIT). It is experimental and untested. See `references/antv-illustration-engine.md`.
 
 ## Run educational verification
 `python examples/zimantic/labs/verify_concepts.py`
