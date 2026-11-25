@@ -1,0 +1,22 @@
+{
+  "results": {
+    "postgres": {
+      "custom_svg_xml": "PASS",
+      "antv_dsl_structure": "PASS",
+      "antv_render": "NOT_TESTED (package unavailable)"
+    },
+    "attention": {
+      "custom_svg_xml": "PASS",
+      "antv_dsl_structure": "PASS",
+      "antv_render": "NOT_TESTED (package unavailable)"
+    },
+    "decision": {
+      "custom_svg_xml": "PASS",
+      "antv_dsl_structure": "PASS",
+      "antv_render": "NOT_TESTED (package unavailable)"
+    },
+    "data_correctness": "PASS (seven arithmetic and relational invariants)",
+    "html_version_and_fallback": "PASS (CDN pinned; offline message visible)"
+  },
+  "overall": "PARTIAL: offline SVGs and fixtures pass; AntV not rendered"
+}

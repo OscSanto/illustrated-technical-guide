@@ -1,0 +1,16 @@
+infographic relation-dagre-flow-tb-simple-circle-node
+data
+  title LEFT JOIN: input tables and output
+  desc A customer can match several order rows, or none
+  nodes
+    - id customers
+      label Customers: Ada, Ben, Cleo
+    - id orders
+      label Orders: 101→Ada, 102→Ada, 103→Ben
+    - id joined
+      label Joined rows: Ada×2, Ben×1, Cleo×NULL
+  relations
+    customers - match customer_id -> joined
+    orders - contribute matches -> joined
+theme
+  palette #2d92d5 #2e9e52 #ee8517

@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AntV vs Custom SVG — technical illustration experiment</title><style>*{box-sizing:border-box}body{font-family:Inter,Source Sans 3,Arial,sans-serif;background:#f5f7fa;color:#303741;margin:0}header{padding:28px max(24px,4vw);background:#fff;border-bottom:1px solid #d4dae0}h1{margin:0 0 9px;font-size:1.9rem}p{line-height:1.55}main{padding:22px max(20px,3vw) 60px;max-width:1800px;margin:auto}.topic{margin-bottom:34px}.topic h2{font-size:1.35rem}.pair{display:grid;grid-template-columns:1fr 1fr;gap:17px}.panel{background:white;border:1px solid #cbd0d5;border-radius:13px;padding:14px;min-width:0;box-shadow:0 2px 8px #2222220a}.panel h3{margin:2px 0 10px;font-size:1rem}.panel img,.panel svg{max-width:100%;height:auto}.antv{min-height:320px;overflow:auto}.status{color:#73500b;font-size:.86rem}.meta{color:#65717d;font-size:.88rem}code,pre{font:12px/1.6 ui-monospace,Consolas,monospace}details{margin-top:8px}pre{overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;padding:12px;border-radius:7px}button{padding:8px 12px;border:1px solid #7e8994;background:white;border-radius:7px;cursor:pointer}a{color:#126db2}@media(max-width:950px){.pair{grid-template-columns:1fr}.antv{min-height:260px}}</style></head><body><header><h1>Technical Illustration Engine · v12 experiment</h1><p>Side-by-side comparison of <b>AntV Infographic candidates</b> and <b>tested static custom SVG</b>. AntV panels load a pinned external renderer when network access is available. If it fails, the source DSL remains accessible below. No figures here are attributed to TheLion.AI.</p><p class="meta">All numbers are synthetic teaching examples, not benchmark measurements. AntV templates are structurally plausible candidates; local runtime verification is pending.</p></header><main><section class="topic"><h2>PostgreSQL: LEFT JOIN</h2><p class="meta">AntV relationship overview versus exact row-level join trace</p><div class="pair"><article class="panel"><h3>AntV Infographic · proposed template</h3><div class="antv" id="antv-postgres" aria-live="polite"><p class="status" id="status-postgres">Waiting for AntV renderer…</p></div><button type="button" onclick="saveAntv('postgres')">Export AntV SVG</button><details><summary>View AntV DSL</summary><pre>infographic relation-dagre-flow-tb-simple-circle-node
+data
+  title LEFT JOIN: input tables and output
+  desc A customer can match several order rows, or none
+  nodes
+    - id customers
+      label Customers: Ada, Ben, Cleo
+    - id orders
+      label Orders: 101→Ada, 102→Ada, 103→Ben
+    - id joined
+      label Joined rows: Ada×2, Ben×1, Cleo×NULL
+  relations
+    customers - match customer_id -&gt; joined
+    orders - contribute matches -&gt; joined
+theme
+  palette #2d92d5 #2e9e52 #ee8517</pre></details></article><article class="panel"><h3>Custom SVG · offline original</h3><img src="assets/postgres-custom.svg" alt="PostgreSQL: LEFT JOIN illustrated with explicit technical details" loading="lazy"><p class="meta">Direct SVG rendering; legible offline and editable.</p><a href="assets/postgres-custom.svg" download>Download SVG</a></article></div></section><section class="topic"><h2>Transformer attention</h2><p class="meta">AntV process sequence versus numerically worked attention</p><div class="pair"><article class="panel"><h3>AntV Infographic · proposed template</h3><div class="antv" id="antv-attention" aria-live="polite"><p class="status" id="status-attention">Waiting for AntV renderer…</p></div><button type="button" onclick="saveAntv('attention')">Export AntV SVG</button><details><summary>View AntV DSL</summary><pre>infographic sequence-ascending-steps
+data
+  title Attention on a toy query
+  desc q=[1,0], k1=[1,0], k2=[0,1], d_k=2
+  sequences
+    - label Compute dot products
+      desc q·k1=1; q·k2=0
+      icon calculator
+    - label Scale scores by sqrt(2)
+      desc [0.7071, 0]
+      icon scale
+    - label Softmax scores
+      desc [0.6698, 0.3302]
+      icon chart bar
+    - label Weighted sum of values
+      desc v1=[10,0], v2=[0,20]; output=[6.70,6.60]
+      icon sum
+theme
+  palette #2d92d5 #2e9e52 #ee8517</pre></details></article><article class="panel"><h3>Custom SVG · offline original</h3><img src="assets/attention-custom.svg" alt="Transformer attention illustrated with explicit technical details" loading="lazy"><p class="meta">Direct SVG rendering; legible offline and editable.</p><a href="assets/attention-custom.svg" download>Download SVG</a></article></div></section><section class="topic"><h2>Decision-model outputs</h2><p class="meta">AntV softmax/sigmoid comparison versus side-by-side calculated values</p><div class="pair"><article class="panel"><h3>AntV Infographic · proposed template</h3><div class="antv" id="antv-decision" aria-live="polite"><p class="status" id="status-decision">Waiting for AntV renderer…</p></div><button type="button" onclick="saveAntv('decision')">Export AntV SVG</button><details><summary>View AntV DSL</summary><pre>infographic compare-binary-horizontal-simple-fold
+data
+  title Softmax and sigmoid: different output semantics
+  compares
+    - label One-label decision
+      children
+        - label Softmax logits [2,0.5,-1]
+          desc Billing 0.786, tech 0.175, account 0.039; probabilities sum to 1
+          icon chart bar
+    - label Independent labels
+      children
+        - label Sigmoids [3,1.5,-2.5]
+          desc Refund 0.953, cancel 0.818, legal 0.076; sum need not be 1
+          icon chart bar
+theme
+  palette #2d92d5 #2e9e52 #ee8517</pre></details></article><article class="panel"><h3>Custom SVG · offline original</h3><img src="assets/decision-custom.svg" alt="Decision-model outputs illustrated with explicit technical details" loading="lazy"><p class="meta">Direct SVG rendering; legible offline and editable.</p><a href="assets/decision-custom.svg" download>Download SVG</a></article></div></section><p class="meta">Source: original teaching figures and calculated values. Generated for the skill evaluation. Neither engine verifies the scientific accuracy of its source inputs by itself.</p></main><script src="https://cdn.jsdelivr.net/npm/@antv/infographic@0.2.20/dist/infographic.min.js"></script><script>
+const specs = {"postgres": "infographic relation-dagre-flow-tb-simple-circle-node\ndata\n  title LEFT JOIN: input tables and output\n  desc A customer can match several order rows, or none\n  nodes\n    - id customers\n      label Customers: Ada, Ben, Cleo\n    - id orders\n      label Orders: 101→Ada, 102→Ada, 103→Ben\n    - id joined\n      label Joined rows: Ada×2, Ben×1, Cleo×NULL\n  relations\n    customers - match customer_id -> joined\n    orders - contribute matches -> joined\ntheme\n  palette #2d92d5 #2e9e52 #ee8517", "attention": "infographic sequence-ascending-steps\ndata\n  title Attention on a toy query\n  desc q=[1,0], k1=[1,0], k2=[0,1], d_k=2\n  sequences\n    - label Compute dot products\n      desc q·k1=1; q·k2=0\n      icon calculator\n    - label Scale scores by sqrt(2)\n      desc [0.7071, 0]\n      icon scale\n    - label Softmax scores\n      desc [0.6698, 0.3302]\n      icon chart bar\n    - label Weighted sum of values\n      desc v1=[10,0], v2=[0,20]; output=[6.70,6.60]\n      icon sum\ntheme\n  palette #2d92d5 #2e9e52 #ee8517", "decision": "infographic compare-binary-horizontal-simple-fold\ndata\n  title Softmax and sigmoid: different output semantics\n  compares\n    - label One-label decision\n      children\n        - label Softmax logits [2,0.5,-1]\n          desc Billing 0.786, tech 0.175, account 0.039; probabilities sum to 1\n          icon chart bar\n    - label Independent labels\n      children\n        - label Sigmoids [3,1.5,-2.5]\n          desc Refund 0.953, cancel 0.818, legal 0.076; sum need not be 1\n          icon chart bar\ntheme\n  palette #2d92d5 #2e9e52 #ee8517"};const instances = {};
+function createAntv(){
+ const C=window.AntVInfographic?.Infographic;
+ for (const [name,spec] of Object.entries(specs)) {
+  const out=document.getElementById('antv-'+name),status=document.getElementById('status-'+name);
+  if(!C){status.textContent='Renderer unavailable offline or CDN blocked. DSL retained below; no AntV visual was verified.';continue;}
+  try{const viz=new C({container:'#antv-'+name,width:'100%',height:'100%',editable:false});instances[name]=viz;Promise.resolve(viz.render(spec)).then(()=>{status.remove()}).catch(e=>{status.textContent='AntV render error: '+e.message});}
+  catch(e){status.textContent='AntV initialization error: '+e.message;}
+ }
+}
+async function saveAntv(name){const v=instances[name];if(!v){alert('AntV renderer unavailable. Use the offline custom SVG.');return;}try{const src=await v.toDataURL({type:'svg'});const a=document.createElement('a');a.href=src;a.download=name+'-antv.svg';a.click();}catch(e){alert('AntV export failed: '+e.message);}}
+createAntv();
+</script></body></html>

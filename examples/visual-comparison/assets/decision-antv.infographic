@@ -1,0 +1,16 @@
+infographic compare-binary-horizontal-simple-fold
+data
+  title Softmax and sigmoid: different output semantics
+  compares
+    - label One-label decision
+      children
+        - label Softmax logits [2,0.5,-1]
+          desc Billing 0.786, tech 0.175, account 0.039; probabilities sum to 1
+          icon chart bar
+    - label Independent labels
+      children
+        - label Sigmoids [3,1.5,-2.5]
+          desc Refund 0.953, cancel 0.818, legal 0.076; sum need not be 1
+          icon chart bar
+theme
+  palette #2d92d5 #2e9e52 #ee8517

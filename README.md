@@ -1,48 +1,36 @@
-# Illustrated Technical Guide (v11)
+# Illustrated Technical Guide — v12 experimental AntV integration
 
-**An evidence-aware Claude Code skill for creating deeply explained, illustrated computer-science textbooks and hand-holding technical tutorials.**
+Generate deeply explained, illustrated, testable, introductory-to-advanced computer-science HTML textbooks. This is a developer preview, **not a proven consistent release**.
 
-Two modes, independently usable:
+## Two main modes (retained)
 
-- **Generate:** write an original illustrated guide for any CS topic, choosing the best teaching profile (hands-on, conceptual, mathematical, or mixed).
-- **Reconstruct (opt-in):** faithfully explain and audit a named source article/paper while tracking every substantive claim, equation, algorithm, dataset, measurement and omission.
+- **Generate:** a general-purpose illustrated, hands-on technical guide from a learning-outcome request.
+- **Reconstruct (optional):** source-faithful reconstruction of a specified paper, article or repository, with provenance and omission checks. Original instructional diagrams and synthetic examples must be labeled.
 
-## Install
+## New v12 feature: optional AntV Infographic rendering
 
-```bash
-mkdir -p .claude/skills
-cp -R skills/illustrated-technical-guide .claude/skills/
-```
+See [`references/antv-illustration-engine.md`](skills/illustrated-technical-guide/references/antv-illustration-engine.md). The skill now routes broad narrative/comparison/overview diagrams toward AntV, while retaining precise custom SVG for detailed mechanisms. It uses a stable visual palette and semantic color registry, with editable source and eventual static SVG export.
 
-See [installation](docs/installation.md). Usage examples:
+**Current verification:** 3 custom figures rendered to PNG and passed numerical and XML tests; 3 AntV DSL candidates were authored but AntV couldn't be installed or rendered here (network blocked). See [`reports/COMPARISON_REPORT.md`](reports/COMPARISON_REPORT.md). Do not represent v12 as a full AntV integration test.
 
-```text
-/illustrated-technical-guide Beginner PostgreSQL with VS Code, joins, GROUP BY, and EXPLAIN ANALYZE; build one working dataset throughout.
-/illustrated-technical-guide Teach transformer attention with tensor shapes, hand-computed softmax, diagrams, and a tested NumPy example.
-/illustrated-technical-guide Reconstruct <source URL> in source-audit mode, with claim-by-claim coverage and labeled original pseudocode.
-```
+## Open the experiment
 
-## Why it is different
+[`examples/visual-comparison/index.html`](examples/visual-comparison/index.html): PostgreSQL LEFT JOIN, transformer attention, and softmax vs sigmoid. Left panels use pinned `@antv/infographic@0.2.20` via CDN when reachable. Right panels are offline SVGs. Use the assets directory for PNG previews, DSL, and SVG sources.
 
-- Teaching profiles chosen per goal instead of mandatory identical chapter templates.
-- First-success ladder for practical subjects, with expected outputs and troubleshooting.
-- Technical, mechanism-specific illustrated SVG diagrams rather than ornamental generic flows.
-- Source provenance on code, diagrams, math, API examples and benchmark figures.
-- Fail-closed deterministic checks; no false claims about executed code or published metrics.
-- Eight-topic regression protocol designed to measure quality and variation across runs.
+## Install skill in Claude Code
 
-## Run checks
+Copy `skills/illustrated-technical-guide` into `.claude/skills/illustrated-technical-guide` in your project. Its entry point is [`SKILL.md`](skills/illustrated-technical-guide/SKILL.md). The existing validator and provenance scripts remain installed. This experimental package does not include AntV runtime files. The HTML figure preview uses a pinned CDN and must be exported to SVG for offline final textbooks.
+
+## Tests
 
 ```bash
+python scripts/build_visual_comparison.py
+python scripts/test_visual_comparison.py
 python -m unittest discover -s tests -v
-python evals/evaluate.py --suite evals/cases.json --root evals/fixtures
-python skills/illustrated-technical-guide/scripts/quality_gate.py --guide evals/fixtures/pass
 ```
 
-The included `pass` fixture passes **structural** checks only, not independent scientific fact-checking. See [limitations](docs/limitations.md) and [evaluation methodology](evals/README.md).
-
-## Status
-**v11: developer preview.** The validators and pedagogical router are implemented; reliable generation quality across different agent runs is *not yet established*. Legacy Jev/PostgreSQL examples under `examples/` are intentionally labeled drafts and are not v11 golden outputs. Actual model-run benchmark results will be added only after repeated executions and human review.
+See [`reports/COMPARISON_REPORT.md`](reports/COMPARISON_REPORT.md) for measured outcomes and unresolved blockers.
 
 ## License
-MIT (see `LICENSE`). Copyright/license of any external papers, code, diagrams, or documentation remains with their respective owners.
+
+Original skill content retains its existing LICENSE. AntV Infographic is a separate MIT-licensed project: https://github.com/antvis/Infographic . We reference its API, DSL and package but have **not copied its source code into this repo**.

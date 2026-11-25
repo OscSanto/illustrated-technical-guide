@@ -1,0 +1,19 @@
+infographic sequence-ascending-steps
+data
+  title Attention on a toy query
+  desc q=[1,0], k1=[1,0], k2=[0,1], d_k=2
+  sequences
+    - label Compute dot products
+      desc q·k1=1; q·k2=0
+      icon calculator
+    - label Scale scores by sqrt(2)
+      desc [0.7071, 0]
+      icon scale
+    - label Softmax scores
+      desc [0.6698, 0.3302]
+      icon chart bar
+    - label Weighted sum of values
+      desc v1=[10,0], v2=[0,20]; output=[6.70,6.60]
+      icon sum
+theme
+  palette #2d92d5 #2e9e52 #ee8517

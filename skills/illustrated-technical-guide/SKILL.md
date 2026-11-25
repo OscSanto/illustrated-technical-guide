@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Create original deeply explained, illustrated, testable CS learning guides and HTML textbooks; optionally reconstruct a supplied technical article or paper faithfully with claim-level provenance. Use for hands-on tutorials, mathematical walkthroughs, architecture explainers, and source-audited reconstructions.
 ---
-# Illustrated Technical Guide v11
+# Illustrated Technical Guide v12 — AntV experiment
 
 ## Two independent capabilities
 - **Generate (default):** research and author an original, approachable, illustrated technical textbook from a topic. Do not require a reference article.
@@ -14,7 +14,7 @@ Read `profiles/hands-on.md`, `profiles/conceptual.md`, `profiles/mathematical.md
 ## Working agreement (mandatory)
 1. State intended learner and starting knowledge. Choose a recurring, minimally sized but authentic example. Write measurable learning objectives and a dependency-ordered outline.
 2. **Research responsibly.** Read `references/research.md`. Use primary technical sources when possible and track claims in `research_inventory.json`. Unbrowsed URLs are unverified. Never fabricate citations, measurements, APIs, or tests.
-3. **Storyboard instructional figures.** Read `references/illustrations.md`. Illustrations must reveal a real operation, trace, state change, or tradeoff. Use original accessible SVG/HTML by default. Do not use unverified numbers as measurements.
+3. **Storyboard instructional figures.** Read `references/illustrations.md`. Illustrations must reveal a real operation, trace, state change, or tradeoff. Use `references/antv-illustration-engine.md` to choose optional AntV infographics or mechanism-specific custom SVG. Use original accessible SVG/HTML by default. Do not use unverified numbers as measurements.
 4. **Implement exercises and verification.** Read `references/execution.md`. In hands-on chapters, every milestone yields observable results plus troubleshooting. Distinguish executable/tested, executable/untested and pseudocode; always identify what code was created by us vs. adapted from a source.
 5. **Make every artifact traceable.** Read `references/source-fidelity.md`. Visible origin labels for code, pseudocode, equations, datasets, architecture diagrams, tables and benchmarks, with machine-readable metadata. In reconstruct mode, claim-by-claim coverage and uncertainty are mandatory.
 6. **Publish responsive standalone HTML.** Use `templates/standalone.html` as a starting point, with generated nested TOC, accessible headings, offline-readable formulas, labeled diagrams, downloadable labs, mobile layout, and source links. Original authoring files may be modular; the final HTML export should be portable.
