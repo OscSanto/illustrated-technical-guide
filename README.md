@@ -1,45 +1,24 @@
-# Illustrated Technical Guide — Claude / Claude Code Skill v2
+# Illustrated Technical Guide — v3
 
-A reusable instruction skill for generating **original, standalone illustrated HTML guides about any subject**, using adaptive chapter counts and a dynamically built table of contents. `index.html` is a working **decision-model demo**, not the content that will be repeated for every topic.
+A topic-independent Claude / Claude Code skill for writing original, research-grounded standalone HTML teaching guides, inspired by the educational organization of TheLion.AI, not copied from its design assets.
 
-## Install in Claude Code (personal)
-
-Extract the ZIP and copy the folder `illustrated-technical-guide/` into:
-
-- macOS/Linux: `~/.claude/skills/illustrated-technical-guide/`
-- Windows: `%USERPROFILE%\.claude\skills\illustrated-technical-guide\`
-
-The file `SKILL.md` must be directly inside that folder. For a project-only skill, use `.claude/skills/illustrated-technical-guide/` in the project root instead.
+## Installation
+Extract this folder as `illustrated-technical-guide` under `~/.claude/skills/` (Windows: `%USERPROFILE%\.claude\skills\`) for personal use, or `<project>/.claude/skills/` for project-specific use. Ensure `SKILL.md` is directly inside that folder.
 
 ## Invoke
+Explicit in Claude Code: `/illustrated-technical-guide Explain transformer attention, with full derivations and executable PyTorch.`
+Implicit: `Create a comprehensive illustrated HTML guide to Bayesian inference.` Claude may select the skill if relevant, but selection is not guaranteed.
 
-**Explicit (recommended for reliability):**
-
-`/illustrated-technical-guide Explain transformer attention from scratch, with math, diagrams, and PyTorch.`
-
-**Implicit:**
-
-`Create a comprehensive illustrated HTML textbook explaining Bayesian inference, with a clickable table of contents and worked examples.`
-
-Claude Code can select the skill automatically based on the description, but auto-selection is not guaranteed. If the slash command is not discovered, restart the session and check the folder and YAML frontmatter. You can also say `Use the illustrated-technical-guide skill to ...`.
-
-## Claude.ai (web/app)
-
-Skill support and installation depend on the Claude environment and account. If custom Skills are available, upload the ZIP through the relevant Skills settings and enable it. Explicitly ask Claude to use the skill; implicit selection may occur but is not guaranteed. If custom Skills are not available, attach `SKILL.md` and the HTML reference and ask Claude to follow them. A Claude Project's instructions are an alternative, but not the same as a registered skill.
-
-## What's improved in v2
-
-- Content-driven outline; chapter count varies by topic.
-- Desktop and mobile TOC generated from the actual headings (including h3 subsections).
-- Active-section highlighting and reading progress.
-- Automatic mobile TOC collapse after a selection.
-- Topic-specific diagram decision rules, citation integrity, complete-chapter quality gate.
-- Clear explicit and implicit invocation instructions.
+In Claude.ai, install/upload the skill through the Skills feature if available on your account; ask Claude to use it by name. This ZIP is for a Claude skill, not a deployed website.
 
 ## Files
+- `SKILL.md` — generation requirements and depth/quality gates.
+- `template.html` — standalone design reference.
+- `examples/jev-guide.html` — earlier illustrative example; deliberately short of v3's full depth requirements.
+- `scripts/validate_guide.py` — static checks (requires `beautifulsoup4`).
 
-- `SKILL.md`: the reusable agent instructions.
-- `index.html`: self-contained HTML demo with adaptive TOC behavior.
-- `README.md`: installation and invocation.
+## What's new
+Eight-part depth gate per major mechanism, numerical traces, reproducible code and tests, claim ledger, explicit proprietary/inferred distinctions, no-JS TOC requirement, and deterministic HTML audit. These requirements improve reliability but cannot guarantee that a generated guide is as extensive or visually polished as the reference website. Browser visual QA and factual source verification remain necessary.
 
-This skill reproduces an *educational design approach*, not the original TheLion.AI copyrighted page.
+## Test
+`python scripts/validate_guide.py examples/jev-guide.html`

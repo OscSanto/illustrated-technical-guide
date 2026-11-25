@@ -1,83 +1,85 @@
 ---
 name: illustrated-technical-guide
-description: Generate a complete, original, deeply researched, visually taught standalone HTML guide on ANY subject, with automatically generated clickable table of contents, equations when appropriate, diagrams, worked examples, and practical exercises. Use when asked for a visual guide, illustrated textbook, deep dive, educational microsite, or TheLion-style long-form explanation. Do not use for a short answer or ordinary web page.
+description: Create original, deeply explained, research-grounded standalone illustrated HTML textbooks on any topic, with adaptive chapters, auto-generated table of contents, stepwise math, diagrams, runnable implementations, exercises, and automated quality checks. Use for illustrated technical guides, educational microsites, comprehensive explainers, or reproducible tutorials. Do not invoke for brief answers or generic landing pages.
 ---
-# Illustrated Technical Guide — Reusable Claude Skill (v2)
+# Illustrated Technical Guide — v3 (depth-first)
 
-## Activation
-- **Explicit:** User says `/illustrated-technical-guide TOPIC` (when installed as a Claude Code skill), or asks to "use the illustrated-technical-guide skill".
-- **Implicit:** Activate when the user's request matches the description and the skill is available. Never imply that implicit activation is guaranteed: Claude chooses whether to load it.
-- **Default deliverable:** Write a complete, standalone `index.html` to the current project directory (or user-specified path), then report its location.
-- If the user supplies no subject, ask for the subject. Otherwise proceed without unnecessary questions; use sensible defaults.
+## Invocation
+- Claude Code explicit: `/illustrated-technical-guide <topic and desired depth>`.
+- Claude Code implicit: Claude may select this skill when its description matches; not guaranteed.
+- Claude.ai: install as a custom skill where supported, then request it by name or describe the guide.
+- Output: complete standalone `index.html` in requested location, plus optional reproducible examples.
 
-## Mission
-Create an ORIGINAL long-form educational page inspired by the *editorial structure and instructional logic* of https://www.thelion.ai/guide-to-decision-models/. Do not copy the source site's text, branding, illustrations, logos, or distinctive creative assets. Make the guide useful for any topic: ML, mathematics, engineering, economics, biology, history, law, crafts, etc.
+## Core contract
+Build a *new* original teaching page inspired by the educational organization (not copyrighted content or branding) of TheLion.AI's decision-model guide. Use `template.html` as a visual starting point, never as unedited final content. Do not claim to reproduce proprietary internals without evidence. Distinguish **verified**, **inferred**, **illustrative**, and **measured** material. Never fabricate citations, metrics, or source quotations.
 
-## Content planning: adaptive, not fixed
-1. Identify target audience, scope, learning objectives, prerequisites, and whether the subject needs formal mathematics or procedural instructions.
-2. Draft a coherent outline **before** HTML. Use as many chapters as the subject genuinely needs (often 6–16, not always 15). Include sections/subsections where helpful. Do not invent filler chapters.
-3. Select one running example or case study when it improves continuity; adapt examples to the domain.
-4. Develop the narrative from motivation → foundations → mechanisms → worked examples → implementation/application → evaluation/evidence → limitations → references.
-5. Every chapter must contain meaningful original teaching content. No TODOs, "chapter slots," or single-sentence placeholders. If the request is too broad, narrow scope transparently or divide into a series.
-6. Separate established fact, measured evidence, inference, illustrative example, and speculation. Never invent papers, quotations, benchmark results, or citations.
+## Planning phase (mandatory)
+1. Define audience, prerequisite knowledge, outcome, and scope; choose 6–16 substantive chapters as appropriate, never a fixed count.
+2. Build a dependency-ordered outline: motivation → prerequisite concepts → architecture/mechanisms → derivation → reconstruction → training/operation → validation → failure modes → applications → sources.
+3. Select a recurring worked example where appropriate; carry its exact variables and inputs across chapters.
+4. Write a **concept inventory**: each major mechanism gets its own instructional unit and visual if relationships, sequence, or computation are nontrivial.
+5. Create a **claim ledger**: assertion, source URL, date/section if available, confidence class (verified/inferred/illustrative), and planned citation location. If research tools are unavailable, state the limitation and omit unsupported claims.
+6. For technical subjects, set an explicit reproduction target and testable acceptance criteria (e.g., matching numerical output, loss decreasing, unit tests passing).
 
-## When to use images (purpose-driven)
-- **Problem/workflow:** flowchart immediately after explaining the real-world task.
-- **Architecture/structure:** labeled component diagram when relationships or dependencies first become complex.
-- **Comparison:** side-by-side panels when alternatives differ in steps, data flow, assumptions, or outputs.
-- **Procedure:** numbered steps and feedback arrows when sequence matters.
-- **Mathematics:** matrices, annotated vectors, shapes, and a fully worked numerical calculation beside each difficult equation (only where relevant).
-- **Evidence:** chart ONLY with real sourced measurements; explicitly mark any synthetic numbers as illustrative.
-- **Spatial/physical subject:** labeled cross-section, map, exploded view, timeline, or process sketch, as relevant.
-- **Trade-offs:** table after prose; do not replace all prose with tables.
-- Do NOT add images at arbitrary intervals. Each figure must answer a specific question, have a numbered caption, meaningful alt text, and be placed adjacent to the explanation it clarifies.
-- Use original inline SVG, accessible HTML/CSS diagrams, or user-authorized assets. No hotlinked stock images or copied figures.
+## Depth gate — EACH major algorithm/mechanism
+A section is NOT complete unless it contains all applicable items:
+1. **Problem:** concrete question or failure of prior approach.
+2. **Intuition:** plain-language explanation with explicit assumptions.
+3. **Architecture:** original labeled diagram showing direction, interfaces, and shapes where relevant.
+4. **Formalization:** equation(s), with every symbol, dimension, domain, and convention defined; avoid decorative equations.
+5. **Worked example:** actual small inputs; perform each transformation, show intermediate values and final result. Verify arithmetic with code if possible.
+6. **Reconstruction:** pseudocode then runnable minimal code (standard Python or clearly pinned dependencies), including complete input and expected output.
+7. **Verification:** executable assertion, unit test, invariant, or a hand-check; show failure case and how to debug it.
+8. **Trade-offs:** complexity, memory/latency implications where grounded, assumptions, alternatives, and limitations.
+If a field is inapplicable (e.g., equations for a historical account), substitute appropriate evidence/procedure and explicitly avoid forcing mathematics. No empty chapter shells or TODO placeholders.
 
-## Deep explanation recipe
-For each nontrivial mechanism, adapt the sequence: concrete situation → why current method fails → intuition → diagram → formal explanation (define every variable) → numerical or real-world worked example → procedural steps/pseudocode/code when appropriate → verification → failure modes and trade-offs.
-Avoid forcing equations into non-mathematical topics. For code examples, use executable snippets with dependencies, inputs, outputs, and test/checkpoints. For historical or social topics, prioritize source analysis, timelines, evidence, and competing interpretations.
+## Visual grammar: image choice and placement
+- Workflow/problem → flowchart immediately after the concrete scenario.
+- Architecture → component diagram at first introduction of interacting parts.
+- Mathematical transform → annotated matrices/tensors and numerical steps directly beside equation.
+- Algorithm/process → numbered flow with loop/feedback edges.
+- Comparison → aligned side-by-side schematic sharing scale and terminology.
+- Experimental claim → chart with data source, units, axes, sample size if available; never depict invented data as measured.
+- Spatial subject → exploded view, section drawing, timeline, or map as appropriate.
+- Figure rule: every original SVG/HTML illustration has `figure`, meaningful accessible name/alt, numbered `figcaption`, and is cited in nearby prose. Each answers a specific reader question. No arbitrary image quota, no decorative stock images, no copied website figures.
+- Use diagrams for difficult transitions; avoid replacing essential explanation with illustrations alone.
 
-## Visual and structural style
-- Quiet editorial design: warm off-white background, near-black text, understated accent colors, serif display headings, sans-serif body, monospace code.
-- Hero: eyebrow, descriptive title, one-paragraph deck, dynamic chapter/figure metadata, original overview illustration if genuinely useful.
-- Readable main column (~700–760px) with wider figures (~900px), generous whitespace, restrained borders, captions immediately below illustrations.
-- Desktop sticky left sidebar; mobile expandable contents; responsive tables, accessible focus indicators, sensible print stylesheet.
-- Use semantic HTML: `<main>`, `<article>`, `<section>`, `<nav>`, `<h1>`–`<h3>`, `<figure>`, `<figcaption>`, `<pre>`, `<table>`. Exactly one h1.
-- Include a "How to read" section, chapter sections, sources/references, and a coherent conclusion.
+## Composition and layout
+- Quiet editorial look: cream/off-white canvas, dark body text, restrained accents, serif headline, sans-serif body, monospace code.
+- Hero with descriptive title, scope, audience, estimated reading level, guide metadata, and original overview visual if helpful.
+- Main reading column ~720px; wider technical figures; generous whitespace, accessible contrast, captions, callouts for assumptions and caveats.
+- Desktop sticky TOC; mobile disclosure navigation; print layout; responsive wide tables/code.
+- Semantic h1–h3, section ids, figures/captions, accessible links and focus states, reduced-motion support.
+- Full article: prerequisite checklist, chapters, key terms, exercises, references, and summary of what reader can reproduce.
 
-## Dynamic table of contents: REQUIRED
-- The actual chapter count is determined by the content, not by a fixed template.
-- Derive TOC entries from the actual DOM: each `article.content > section` with `h2`, plus nested `h3` subsections. Include the introduction and references.
-- Give each section a stable unique id; generate unique slug ids for h3 if missing.
-- Generate clickable links in BOTH desktop and mobile TOCs from those headings; never manually hardcode chapter links.
-- Highlight the currently read section, show reading progress, and close mobile TOC after navigation.
-- Anchor links must work with JavaScript enabled; provide an accessible no-JS fallback (e.g. server-generated static TOC when building, or clear in-document headings and navigation). In a self-contained file, prefer generating TOC links at build time if a generator is available; progressive enhancement can add active tracking.
-- Verify all anchors exist, no duplicates, chapter numbers are correct, and TOC automatically adapts when chapters are added/removed.
+## TOC contract (must pass)
+- Generate desktop and mobile contents from actual headings, including nested h3 subsections; no fixed list of chapter names.
+- Preserve unique stable IDs and working anchors, active-section indicator, reading progress, mobile collapse behavior.
+- Provide useful navigation without JS (pre-render TOC at build time when possible). JS enhancement may update highlights/progress.
+- Run `scripts/validate_guide.py index.html` and fix errors before delivering.
 
-## HTML implementation
-- Output a complete self-contained `index.html` with embedded CSS, JS, and original SVGs; do not require a CDN, framework, server, or build step.
-- Use `index.html` from this skill directory as a **styling and behavior reference**, not as immutable content. Replace ALL sample subject-specific prose and figures.
-- Update hero/title, cover, running example, figure numbering, chapters, and citations for the new topic.
-- Avoid untrusted HTML injection; if building HTML programmatically, escape user-supplied text.
-- Make links keyboard-accessible; support reduced motion; ensure color contrast, mobile overflow, and print behavior.
+## Technical fidelity
+- Define symbols and tensor shapes *before* using them in equations; distinguish loss, training objective, optimizer, and inference procedure.
+- Show a trace for one complete forward pass and, where relevant, one backward/optimization step.
+- Include minimal reproducible environment and dependencies; code blocks must be executable, not pseudocode disguised as code.
+- Compare baseline and proposed method with the same dataset and metrics; explain sources of confounding.
+- Label synthetic values **illustrative** in chart captions and nearby text. Do not make invented benchmark claims.
+- Proprietary systems: present public interface as verified, candidate implementation as inferred, and state exactly what cannot be reproduced.
 
-## Research and citation integrity
-- If browsing is available, prefer primary research, official docs, and reliable domain references. Link references at point of claim and in a numbered bibliography.
-- If browsing is unavailable, do not fabricate citations; disclose that references require verification.
-- Attribute quoted or adapted source material, respect copyright, and clearly identify hypothetical examples.
+## Build and verification sequence
+1. Research original/primary sources when available and write claim ledger.
+2. Outline and write full prose and examples before decorating.
+3. Build original diagrams from the explanations, not the reverse.
+4. Produce complete offline `index.html` with embedded CSS, JS, and SVG; no CDN or server required.
+5. Execute sample code/tests when possible; check numeric examples and diagram labels.
+6. Run `python scripts/validate_guide.py path/to/index.html` (requires Python and BeautifulSoup). Fix all reported errors; manually test browser responsiveness and JS behavior if browser automation is available.
+7. Audit each major mechanism against eight-point depth gate. State any incomplete areas honestly; do not call a shallow outline a full reproduction.
+8. Report chapter count, figure count, references, tested code, and remaining limitations.
 
-## Completion checks
-1. Standalone file opens locally without network.
-2. Outline fits the topic; all chapters are substantive and complete.
-3. Both TOCs match actual chapters/subsections; every anchor works.
-4. Active TOC and progress indicator work; mobile TOC collapses.
-5. Every image is original, necessary, captioned, accessible, and adjacent to relevant text.
-6. Every equation is explained and every claimed measurement sourced or labeled illustrative.
-7. Code samples and numeric calculations checked when feasible.
-8. No fixed 15-chapter assumption, placeholders, dead links, copyright copying, or horizontal overflow.
-9. Provide the generated HTML file and a concise summary of chapters/figures.
+## Source material
+- `template.html`: visual/behavior reference; replace all sample prose, figures, citations, metadata.
+- `examples/jev-guide.html`: earlier short Jev guide demonstrating layout; intentionally **not** a passing depth benchmark for every chapter.
+- `scripts/validate_guide.py`: deterministic static checks, not a substitute for visual browser QA or factual review.
 
-## Example requests
-- `/illustrated-technical-guide Explain transformer attention from dot products through multi-head attention, with tensor shapes and PyTorch`.
-- `Use the illustrated-technical-guide skill to teach concrete mold making, with diagrams and safety notes.`
-- `Create an illustrated 10-chapter guide to Bayesian statistics with worked problems and source references.`
+## Example
+`/illustrated-technical-guide Build a full guide to transformer attention: derive QKV, trace a 3-token example, implement multi-head attention in PyTorch, verify against a manual calculation, and compare causal and bidirectional masks.`
