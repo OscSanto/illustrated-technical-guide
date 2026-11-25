@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Research, write, illustrate, implement, test, and publish substantial original standalone HTML technical textbooks with a dynamic nested contents menu. Invoke when user asks for a comprehensive illustrated guide, detailed mathematical reconstruction, or technical learning microsite.
 ---
-# Illustrated Technical Guide v8 — research-to-publication
+# Illustrated Technical Guide v9 — evidence-driven revision
 
 ## Invocation
 Explicit in Claude Code: `/illustrated-technical-guide <topic>`. Implicit selection is possible when the description matches. The skill creates `index.html`, a source ledger, runnable examples, and a validation report. It must not deliver a skeletal overview as a completed textbook.
@@ -95,3 +95,22 @@ A figure fails if its content can be replaced by “Input → Model → Output�
 `research → evidence inventory → concept coverage matrix → figure storyboard → write → build diagrams → math typeset → run labs → inspect screenshots → publication_gate → revise → publication_gate → deliver`
 
 See `schemas/` for example JSON manifests. `scripts/publication_gate.py` is a working checker, not a guarantee of semantic correctness. Human review and independent source checking remain essential.
+
+
+## v9: mandatory fail-closed revision loop
+
+Do not stop after generating a draft or a list of findings. Execute the loop below until it passes **or** report the remaining blockers truthfully. A PASS is forbidden when code, sources, screenshots, or figures are unreviewed.
+
+1. **Evidence plan:** Before drafting, write an evidence matrix linking each learning objective to sources, runnable tests, and figure storyboards. Source verification means reading the cited source; recording a URL alone does not count.
+2. **Generate:** Build the complete guide, sample data, executable lab, and tests. Use the same example throughout. Technical diagrams must show real row/tensor values and actual transformations, not just labeled boxes.
+3. **Run:** Execute examples against the actual target engine (e.g., PostgreSQL, not SQLite). Run assertions on expected outputs, negative cases, and reproducibility. Record versions, command, exit code, and logs. If engine unavailable, mark execution UNVERIFIED.
+4. **Audit:** Run static HTML, chapter completeness, source coverage, figure storyboard, accessibility, and browser screenshot tests. Structural checks are not a substitute for expert fact checking.
+5. **Repair:** Convert each blocker into a specific edit, change the content or tests, then re-run all affected checks. Do not flip `review_status` or `tests_run` fields to `approved`/`true` unless evidence exists. Never downgrade blockers simply to obtain PASS.
+6. **Bounded iteration:** Default 3 repair cycles. Track each finding's first appearance, attempted fix, outcome, and evidence. If blockers remain, publish as **DRAFT / FAIL**, with exact limitations and reproducible next steps.
+7. **Regression:** Repeat with a second unrelated topic to test transfer. Report differences and regressions, not just counts.
+
+### Publication evidence contract
+Store `RUN_LOG.json` with commands, engine/version, outputs, screenshots, assertions, and unavailable dependencies. Store `REPAIR_LOG.md` with blocker→change→retest trace. A human visual review is not established by merely saving screenshots; require documented inspection. Provide honest progress and never invent measured benchmarks.
+
+### PostgreSQL benchmark fixture
+`examples/postgresql/` is a separate-topic regression fixture, NOT a passed textbook. Its SQL execution requires a running PostgreSQL server; SQLite is not equivalent. Run `python scripts/revision_loop.py --root examples/postgresql --html index.html` to inspect blockers and produce an actionable report.

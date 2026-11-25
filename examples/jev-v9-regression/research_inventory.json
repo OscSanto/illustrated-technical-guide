@@ -1,0 +1,115 @@
+{
+  "mode": "source_audit",
+  "reference_url": "https://www.thelion.ai/guide-to-decision-models/",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.thelion.ai/guide-to-decision-models/",
+      "title": "TheLion.AI Visual guide to Jev-like models",
+      "verified": true,
+      "verification_note": "Public webpage accessed during this test; only selected sections inspected."
+    }
+  ],
+  "claims": [
+    {
+      "id": "launch",
+      "statement": "Jev launched on 15 September 2026",
+      "source_id": "S1",
+      "source_locator": "How to read this guide",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-2",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "typed",
+      "statement": "Jev exposes Choice, Score and Noul typed decision questions",
+      "source_id": "S1",
+      "source_locator": "Chapter 3",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-5",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "shared",
+      "statement": "Many decisions can share one state representation",
+      "source_id": "S1",
+      "source_locator": "Chapter 3",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-13",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "logits",
+      "statement": "Letter-logit readout with option-restricted softmax is a reproducible method",
+      "source_id": "S1",
+      "source_locator": "Chapter 4",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-7",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "mask",
+      "statement": "Question isolation can be enforced with an attention mask",
+      "source_id": "S1",
+      "source_locator": "Chapter 6",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "why-the-mask-matters",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "calibration",
+      "statement": "Temperature calibration is important for probabilities",
+      "source_id": "S1",
+      "source_locator": "Chapter 7",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-15",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "train",
+      "statement": "Decision models may be trained with cross-entropy or distillation",
+      "source_id": "S1",
+      "source_locator": "Chapter 8",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "training-objective",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "open",
+      "statement": "Open reproductions vary in architecture and training",
+      "source_id": "S1",
+      "source_locator": "Chapter 11",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-2",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "security",
+      "statement": "Prompt injection and option-order effects are failure modes",
+      "source_id": "S1",
+      "source_locator": "Chapter 13",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-2",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    },
+    {
+      "id": "production",
+      "statement": "Batching and inference serving change practical latency",
+      "source_id": "S1",
+      "source_locator": "Chapter 12",
+      "verification": "verified",
+      "status": "partially_covered",
+      "destination_anchor": "audit-heading-2",
+      "note": "Requires exact reference-to-guide mapping and completeness review"
+    }
+  ]
+}

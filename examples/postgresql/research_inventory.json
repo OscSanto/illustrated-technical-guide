@@ -1,0 +1,121 @@
+{
+  "mode": "general",
+  "sources": [
+    {
+      "id": "pgdocs",
+      "url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "title": "PostgreSQL official tutorial",
+      "verified": false
+    },
+    {
+      "id": "pgexplain",
+      "url": "https://www.postgresql.org/docs/current/using-explain.html",
+      "title": "Using EXPLAIN",
+      "verified": false
+    },
+    {
+      "id": "vscode",
+      "url": "https://code.visualstudio.com/docs",
+      "title": "Visual Studio Code documentation",
+      "verified": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic start",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "start"
+    },
+    {
+      "id": "C2",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic install",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "install"
+    },
+    {
+      "id": "C3",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic vscode",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "vscode"
+    },
+    {
+      "id": "C4",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic schema",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "schema"
+    },
+    {
+      "id": "C5",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic data",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "data"
+    },
+    {
+      "id": "C6",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic queries",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "queries"
+    },
+    {
+      "id": "C7",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic group",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "group"
+    },
+    {
+      "id": "C8",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic joins",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "joins"
+    },
+    {
+      "id": "C9",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic analysis",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "analysis"
+    },
+    {
+      "id": "C10",
+      "source_id": "pgexplain",
+      "source_locator": "official documentation; topic performance",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "performance"
+    },
+    {
+      "id": "C11",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic diagnose",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "diagnose"
+    },
+    {
+      "id": "C12",
+      "source_id": "pgdocs",
+      "source_locator": "official documentation; topic production",
+      "verification": "not_independently_checked",
+      "status": "covered",
+      "destination_anchor": "production"
+    }
+  ]
+}

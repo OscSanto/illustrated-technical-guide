@@ -1,0 +1,196 @@
+{
+  "figures": [
+    {
+      "id": "F01",
+      "html_figure_id": "audit-figure-1",
+      "question": "What precise mechanism does figure 1 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-2",
+      "caption": "Figure 1. Only the reply needs open-ended text. This is an original schematic with illustrative categories.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F02",
+      "html_figure_id": "audit-figure-2",
+      "question": "What precise mechanism does figure 2 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-3",
+      "caption": "Figure 2. Public interface shape, with original illustrative labels. This is not a diagram of proprietary internals.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F03",
+      "html_figure_id": "audit-figure-3",
+      "question": "What precise mechanism does figure 3 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "when-this-matters",
+      "caption": "Figure 3. A complete illustrative softmax calculation. These numbers are not measured Jev predictions.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F04",
+      "html_figure_id": "audit-figure-4",
+      "question": "What precise mechanism does figure 4 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-5",
+      "caption": "Figure 4. Three conceptual designs. Step 3 describes a goal and possible implementation strategy, not the confirmed architecture of Jev.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F05",
+      "html_figure_id": "audit-figure-5",
+      "question": "What precise mechanism does figure 5 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "a-schematic-request",
+      "caption": "Figure 5. Conceptual shared-prefix computation. Branch isolation is important: question B should not accidentally read question A.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F06",
+      "html_figure_id": "audit-figure-6",
+      "question": "What precise mechanism does figure 6 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-7",
+      "caption": "Figure 6. An original reliability sketch using invented values; not a Jev benchmark.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F07",
+      "html_figure_id": "audit-figure-7",
+      "question": "What precise mechanism does figure 7 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "work-the-numbers",
+      "caption": "Figure 8. Every number is computed from a two-token toy attention head. The arrows follow the actual matrix operations.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F08",
+      "html_figure_id": "audit-figure-8",
+      "question": "What precise mechanism does figure 8 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "training-objective",
+      "caption": "Figure 9. A one-step training trace with a feedback loop. The direct-logit update is pedagogical, not a full neural-network optimizer.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F09",
+      "html_figure_id": "audit-figure-9",
+      "question": "What precise mechanism does figure 9 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-10",
+      "caption": "Figure 10. Two training signals: observed labels and teacher probabilities. Illustrative distributions.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F10",
+      "html_figure_id": "audit-figure-10",
+      "question": "What precise mechanism does figure 10 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "answer-token-readout",
+      "caption": "Figure 11. Matched-work benchmark design. This figure reports no measured speedups.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F11",
+      "html_figure_id": "audit-figure-11",
+      "question": "What precise mechanism does figure 11 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "option-embedding-readout",
+      "caption": "Figure 12. Illustrative cost-sensitive threshold. Real systems also need policy, authorization, and human oversight.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    },
+    {
+      "id": "F12",
+      "html_figure_id": "audit-figure-12",
+      "question": "What precise mechanism does figure 12 demonstrate?",
+      "answer": "Pending source-specific illustration review",
+      "visual_grammar": "Technical diagram requiring review",
+      "data_provenance": "Unverified in this audit",
+      "adjacent_explanation_anchor": "audit-heading-13",
+      "caption": "Figure 7. Recommended separation of judgment and action. Original workflow schematic.",
+      "technical_labels": [
+        "pending manual review"
+      ],
+      "desktop_review": "not_tested",
+      "mobile_review": "not_tested",
+      "review_status": "pending"
+    }
+  ]
+}
