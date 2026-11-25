@@ -1,0 +1,24 @@
+{
+  "title": "Queue fixture, structural only",
+  "mode": "general",
+  "audience": "fixture authors",
+  "learning_objectives": [
+    "See a labeled queue state"
+  ],
+  "chapters": [
+    {
+      "id": "c1",
+      "profile": "hands-on",
+      "html_anchor": "queue",
+      "learning_objective": "Describe queue state",
+      "learner_check": "What item exits first?",
+      "mechanism_trace": "A is removed, B advances",
+      "tradeoffs": "Queues store order",
+      "limitations": "Does not address concurrency"
+    }
+  ],
+  "review": {
+    "educational": "approved",
+    "source_factcheck": "approved"
+  }
+}

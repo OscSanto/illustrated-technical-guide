@@ -1,0 +1,14 @@
+{
+  "figures": [
+    {
+      "html_id": "queue-figure",
+      "question": "Which entry leaves first?",
+      "mechanism": "FIFO ordering shown as A \u2192 B \u2192 C",
+      "caption": "Illustrative queue state",
+      "provenance": "our_implementation",
+      "review_status": "approved",
+      "desktop_review": "passed",
+      "mobile_review": "passed"
+    }
+  ]
+}

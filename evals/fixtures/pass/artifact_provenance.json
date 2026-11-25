@@ -1,0 +1,16 @@
+{
+  "mode": "general",
+  "artifacts": [
+    {
+      "id": "F1",
+      "html_id": "queue-figure",
+      "type": "figure",
+      "origin": "our_implementation",
+      "verification_status": "illustrative",
+      "visible_label": "Our implementation \u00b7 Illustrative queue trace.",
+      "visible_label_in_html": true,
+      "explanation": "Original schematic used exclusively to exercise the checker",
+      "attributed_to_source": false
+    }
+  ]
+}

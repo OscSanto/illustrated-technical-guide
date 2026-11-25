@@ -1,1 +1,0 @@
--- Copy SQL blocks from the HTML guide in chapter order.

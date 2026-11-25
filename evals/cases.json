@@ -1,0 +1,58 @@
+[
+  {
+    "id": "postgresql",
+    "profile": "hands-on",
+    "prompt": "Beginner PostgreSQL: initialize locally, connect in VS Code, create a four-table commerce dataset, run filters, GROUP BY, joins, and EXPLAIN (ANALYZE, BUFFERS); show errors and expected outputs.",
+    "expected_outcomes": "Setup and observable query results, real PostgreSQL execution, grounded performance measurements",
+    "runs_required": 3
+  },
+  {
+    "id": "attention",
+    "profile": "mathematical",
+    "prompt": "Teach scaled dot-product attention from first principles using real tensor shapes, hand-calculated scores/softmax, illustrated matrices, and tested NumPy code.",
+    "expected_outcomes": "Dimensionally correct derivation, numerical check, original tensor diagram",
+    "runs_required": 3
+  },
+  {
+    "id": "operating-systems",
+    "profile": "conceptual",
+    "prompt": "Explain CPU scheduling, context switching, round-robin, and starvation through a concrete process timeline and step-by-step exercises.",
+    "expected_outcomes": "Timeline, state transitions, fairness/latency tradeoffs, predicted output",
+    "runs_required": 3
+  },
+  {
+    "id": "tcp",
+    "profile": "conceptual",
+    "prompt": "Make a beginner-friendly visual guide to TCP three-way handshake, loss, retransmission, receive window and teardown with packet-by-packet traces.",
+    "expected_outcomes": "Packet sequence and state machine, exact vs simplified semantics",
+    "runs_required": 3
+  },
+  {
+    "id": "data-structures",
+    "profile": "mathematical",
+    "prompt": "Teach hash tables with collisions, separate chaining, resizing, complexity assumptions and tested Python code with exercises.",
+    "expected_outcomes": "Operation traces, verified code, complexity caveats, edge cases",
+    "runs_required": 3
+  },
+  {
+    "id": "react",
+    "profile": "hands-on",
+    "prompt": "Build a beginner React app with components, props, state, forms and debugging, starting with a first working screen and finishing with tested behavior.",
+    "expected_outcomes": "Runnable project, milestone checkpoints, failures/recovery",
+    "runs_required": 3
+  },
+  {
+    "id": "cryptography",
+    "profile": "mathematical",
+    "prompt": "Teach password hashing, salts, key derivation and attacker models using safe, non-production teaching examples; distinguish toy code from production APIs.",
+    "expected_outcomes": "Threat model, safe examples, clear implementation warnings",
+    "runs_required": 3
+  },
+  {
+    "id": "jev-audit",
+    "profile": "source-audit",
+    "prompt": "Faithfully reconstruct TheLion.AI visual guide to Jev-like decision models: distinguish Jev, Kev, SemIf, Decider, Laya and other approaches; trace original equations, measurements, code and figures with full provenance.",
+    "expected_outcomes": "Complete source inventory and reported-vs-reproduced distinction",
+    "runs_required": 3
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Python deque documentation",
+      "url": "https://docs.python.org/3/library/collections.html#collections.deque",
+      "locator": "deque section",
+      "verification": "verified"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "critical": false,
+      "destination_anchor": "queue",
+      "status": "verified"
+    }
+  ]
+}

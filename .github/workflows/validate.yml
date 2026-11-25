@@ -1,0 +1,21 @@
+name: Validate skill
+on:
+  push:
+  pull_request:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -v
+      - run: python skills/illustrated-technical-guide/scripts/quality_gate.py --guide evals/fixtures/pass
+      - name: Confirm incomplete model evaluations are not treated as passed
+        run: |
+          python - <<'PYCODE'
+          import subprocess,sys
+          result=subprocess.run([sys.executable,'evals/evaluate.py','--suite','evals/cases.json','--root','evals/fixtures'])
+          assert result.returncode==2, f'Expected INCOMPLETE exit 2, got {result.returncode}'
+          PYCODE

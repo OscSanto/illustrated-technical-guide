@@ -1,1 +1,0 @@
-The three root JSON files are editable working manifests. Empty fields mean NOT VERIFIED, not N/A. Complete them with actual evidence, HTML anchors, execution results, and figure review before publishing.
