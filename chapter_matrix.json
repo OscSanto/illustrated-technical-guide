@@ -1,0 +1,22 @@
+{
+  "chapters": [
+    {
+      "id": "C01",
+      "title": "MedDecider reconstruction",
+      "html_anchor": "",
+      "major_concept": true,
+      "prerequisites": "",
+      "problem": "",
+      "intuition": "",
+      "diagram_figure_id": "",
+      "variables_and_shapes": "",
+      "derivation": "",
+      "numerical_trace": "",
+      "implementation": "",
+      "tests": "",
+      "tests_run": false,
+      "limitations": "",
+      "review_status": "needs_review"
+    }
+  ]
+}

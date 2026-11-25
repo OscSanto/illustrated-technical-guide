@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Research, write, illustrate, implement, test, and publish substantial original standalone HTML technical textbooks with a dynamic nested contents menu. Invoke when user asks for a comprehensive illustrated guide, detailed mathematical reconstruction, or technical learning microsite.
 ---
-# Illustrated Technical Guide v7 — research-to-publication
+# Illustrated Technical Guide v8 — research-to-publication
 
 ## Invocation
 Explicit in Claude Code: `/illustrated-technical-guide <topic>`. Implicit selection is possible when the description matches. The skill creates `index.html`, a source ledger, runnable examples, and a validation report. It must not deliver a skeletal overview as a completed textbook.
@@ -72,3 +72,26 @@ A figure fails if its content can be replaced by “Input → Model → Output�
 - Keep mathematical expressions selectable through their source labels where possible. Long display math must scroll horizontally on small screens rather than overflow the layout.
 - Verify LaTeX compiles, the SVG is present, and no raw TeX control sequences or malformed Unicode math are visible. Confirm equations mathematically match nearby prose and numerical walkthroughs.
 - Run `python scripts/test_math.py examples/meddecider-guide.html` as a release gate.
+
+
+## v8 — enforceable publication contract (BOTH modes)
+
+**Preserve both modes:** (A) general, topic-independent illustrated textbook, and (B) opt-in source-faithful reconstruction. A source URL does not make the entire skill subject-specific. Use the same research, figure, teaching, and QA gates for both, with reference-specific claims only for mode B.
+
+### Required artifacts before writing
+1. `research_inventory.json`: each primary/secondary source with URL, title, accessed/verified status, evidence excerpts or exact section, provenance; each factual claim has a unique ID, importance, verification status, destination anchor and precise evidence. No invented citation. For general mode, build the inventory from researched sources; if unavailable, mark unverified and avoid factual specificity.
+2. `chapter_matrix.json`: each major algorithm/concept, its prerequisite, problem, intuition, diagram, variables and tensor shapes, derivation, numerical trace, runnable implementation, tests, limitations, and corresponding HTML anchor. Record actual DOM anchors, not just intentions. Mark `not_applicable` with a reason only when genuinely inappropriate (e.g., code for a historical survey).
+3. `figure_storyboard.json`: every figure has a unique ID, linked HTML figure ID, the precise question it answers, the answer, visual grammar, specific mechanisms/labels/values, numeric provenance, adjacent explanation anchor, caption, mobile legibility check, and review status. Reject generic 'input → model → output' diagrams that do not reveal a meaningful mechanism.
+4. `source_coverage.csv` in source-audit mode: extract a comprehensive reference inventory first (all sections, key numeric claims, tables, training settings, datasets, results, licenses, limitations), not merely 20 cherry-picked claims. Map every entry to a source locator and destination. Report omissions as FAIL; do not silently infer.
+
+### Mandatory automated and human-reviewed release gate
+- Run `python scripts/publication_gate.py --root . --html examples/<guide>.html` after generating artifacts. This checks schema, required fields, unique IDs, HTML links, claim destinations, source evidence, chapter depth coverage, figure questions/answers, and source ledger dispositions. It emits `PUBLICATION_REPORT.json` and `PUBLICATION_REPORT.md` and exits nonzero on blocking issues.
+- `review_status=approved` requires an actual review; do not mark it approved based only on automated validation. Figure mobile/desktop reviews require screenshots inspected at two widths. If browser tooling is unavailable, mark `not_tested` and fail the visual gate; do not claim visual QA passed.
+- Code verification requires real execution; `tests_run=true` only after executing the lab. Equations require real math rendering and independent numerical checks. A textual claim of passing is insufficient.
+- **No automatic promotion from draft to publishable.** If any blocker remains, deliver as a clearly labeled DRAFT with a precise defect report, or fix and rerun until clean. Do not weaken the gate to make an example pass.
+- Quality is about coverage, clarity, accuracy and evidence, not arbitrary figure/chapter counts. Avoid artificial padding.
+
+### Suggested workflow
+`research → evidence inventory → concept coverage matrix → figure storyboard → write → build diagrams → math typeset → run labs → inspect screenshots → publication_gate → revise → publication_gate → deliver`
+
+See `schemas/` for example JSON manifests. `scripts/publication_gate.py` is a working checker, not a guarantee of semantic correctness. Human review and independent source checking remain essential.
