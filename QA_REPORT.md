@@ -14,3 +14,6 @@ Reference: https://www.thelion.ai/projects/meddecider/
 - Reported benchmarks, latency and clinical use-case probabilities have not been independently reproduced. Model weights were not downloaded; no full LoRA training was performed.
 - No headless browser screenshots or mobile visual comparison were executed. HTML was parsed and anchors validated, but rendering is not certified.
 - Clinical applications are research examples only and are not validated for patient care.
+
+### v7 mathematics correction
+Replaced four plain-Unicode display equations with offline MathJax-rendered SVG; verified the original LaTeX, accessible labels and SVG markup. Browser screenshot testing not completed.

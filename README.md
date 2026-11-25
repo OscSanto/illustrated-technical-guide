@@ -12,3 +12,5 @@ Use `python scripts/test_source_coverage.py` and `python examples/reproduction_d
 
 ## v6 visual direction
 The skill now includes a source-safe editorial illustration system: warm paper, annotated multi-panel figures, visual grammar selection, SVG-first technical diagrams, and figure-level QA. The MedDecider example upgrades the hero and first three figures with substantial original explanatory art. Other figures retain their content with improved styling and figure headings; this is not a complete 13-figure redraw.
+
+Version 7: display equations are pre-rendered as embedded MathJax SVG for offline, correctly typeset mathematical notation. See scripts/test_math.py.

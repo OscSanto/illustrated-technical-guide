@@ -1,0 +1,11 @@
+const {mathjax}=require('/opt/nvm/versions/node/v22.16.0/lib/node_modules/mathjax-full/js/mathjax.js');
+const {TeX}=require('/opt/nvm/versions/node/v22.16.0/lib/node_modules/mathjax-full/js/input/tex.js');
+const {SVG}=require('/opt/nvm/versions/node/v22.16.0/lib/node_modules/mathjax-full/js/output/svg.js');
+const {liteAdaptor}=require('/opt/nvm/versions/node/v22.16.0/lib/node_modules/mathjax-full/js/adaptors/liteAdaptor.js');
+const {RegisterHTMLHandler}=require('/opt/nvm/versions/node/v22.16.0/lib/node_modules/mathjax-full/js/handlers/html.js');
+const fs=require('fs');
+const adaptor=liteAdaptor(); RegisterHTMLHandler(adaptor);
+const html=mathjax.document('',{InputJax:new TeX({packages:['base','ams']}),OutputJax:new SVG({fontCache:'none'})});
+const input=JSON.parse(fs.readFileSync(0,'utf8'));
+const output=input.map(x=>adaptor.outerHTML(html.convert(x,{display:true})));
+process.stdout.write(JSON.stringify(output));

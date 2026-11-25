@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Research, write, illustrate, implement, test, and publish substantial original standalone HTML technical textbooks with a dynamic nested contents menu. Invoke when user asks for a comprehensive illustrated guide, detailed mathematical reconstruction, or technical learning microsite.
 ---
-# Illustrated Technical Guide v6 — research-to-publication
+# Illustrated Technical Guide v7 — research-to-publication
 
 ## Invocation
 Explicit in Claude Code: `/illustrated-technical-guide <topic>`. Implicit selection is possible when the description matches. The skill creates `index.html`, a source ledger, runnable examples, and a validation report. It must not deliver a skeletal overview as a completed textbook.
@@ -64,3 +64,11 @@ The reference's strength is **editorial information design**, not generic flowch
 
 ### Figure acceptance test
 A figure fails if its content can be replaced by “Input → Model → Output” without losing information. A figure passes when a reader can answer a specific question from it that the surrounding paragraph would otherwise leave ambiguous.
+
+
+## Mathematical typography — v7 mandatory gate
+- Never typeset display equations as plain Unicode approximations (e.g. `Σⱼ₌₁ᴷ` or inline slash fractions). Author equations in valid LaTeX with explicit grouping and defined variables.
+- For standalone offline HTML, pre-render LaTeX into self-contained MathJax SVG using `scripts/render_math.cjs` or equivalent. SVG must have an accessible text label and the original LaTeX in `data-tex`. Do not rely on a CDN.
+- Keep mathematical expressions selectable through their source labels where possible. Long display math must scroll horizontally on small screens rather than overflow the layout.
+- Verify LaTeX compiles, the SVG is present, and no raw TeX control sequences or malformed Unicode math are visible. Confirm equations mathematically match nearby prose and numerical walkthroughs.
+- Run `python scripts/test_math.py examples/meddecider-guide.html` as a release gate.
