@@ -1,3 +1,8 @@
+## v13
+- All 12 Jev illustration slots redesigned or retained as consistent editable SVG.
+- Added responsive figure viewer standard and actual Chromium desktop/mobile benchmark.
+- AntV rendering remains unverified; custom SVG is still the production fallback.
+
 # Changelog
 ## v11.0.0 — modular reliability foundation
 - Split v10 monolithic instructions into four teaching profiles and focused reference documents.

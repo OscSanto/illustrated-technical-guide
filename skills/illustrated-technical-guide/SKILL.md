@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Create original deeply explained, illustrated, testable CS learning guides and HTML textbooks; optionally reconstruct a supplied technical article or paper faithfully with claim-level provenance. Use for hands-on tutorials, mathematical walkthroughs, architecture explainers, and source-audited reconstructions.
 ---
-# Illustrated Technical Guide v12 — AntV experiment
+# Illustrated Technical Guide v13 — Responsive technical figures
 
 ## Two independent capabilities
 - **Generate (default):** research and author an original, approachable, illustrated technical textbook from a topic. Do not require a reference article.
@@ -17,7 +17,7 @@ Read `profiles/hands-on.md`, `profiles/conceptual.md`, `profiles/mathematical.md
 3. **Storyboard instructional figures.** Read `references/illustrations.md`. Illustrations must reveal a real operation, trace, state change, or tradeoff. Use `references/antv-illustration-engine.md` to choose optional AntV infographics or mechanism-specific custom SVG. Use original accessible SVG/HTML by default. Do not use unverified numbers as measurements.
 4. **Implement exercises and verification.** Read `references/execution.md`. In hands-on chapters, every milestone yields observable results plus troubleshooting. Distinguish executable/tested, executable/untested and pseudocode; always identify what code was created by us vs. adapted from a source.
 5. **Make every artifact traceable.** Read `references/source-fidelity.md`. Visible origin labels for code, pseudocode, equations, datasets, architecture diagrams, tables and benchmarks, with machine-readable metadata. In reconstruct mode, claim-by-claim coverage and uncertainty are mandatory.
-6. **Publish responsive standalone HTML.** Use `templates/standalone.html` as a starting point, with generated nested TOC, accessible headings, offline-readable formulas, labeled diagrams, downloadable labs, mobile layout, and source links. Original authoring files may be modular; the final HTML export should be portable.
+6. **Publish responsive standalone HTML.** Use `templates/standalone.html` as a starting point, with generated nested TOC, accessible headings, offline-readable formulas, labeled diagrams, per-figure zoom/pan for dense SVGs, downloadable labs, mobile layout, and source links. Original authoring files may be modular; the final HTML export should be portable.
 7. **Gate and repair.** Run `python scripts/quality_gate.py --guide <guide-directory>`. Run actual code tests and inspect real browser screenshots when available. Resolve blockers in up to 3 repair cycles, writing `REPAIR_LOG.md` with evidence. If unverified, publish clearly as DRAFT; never flip evidence fields merely to pass.
 8. **Evaluate transfer.** Refer to `../../../evals/README.md` in the repository and run multiple unrelated prompt cases across repeated independent generations. CI-only structural PASS is not an LLM consistency score.
 

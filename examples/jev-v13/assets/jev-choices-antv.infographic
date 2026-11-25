@@ -1,0 +1,16 @@
+infographic compare-binary-horizontal-simple-fold
+data
+  title Two ways to obtain 21 decisions
+  compares
+    - label Generate JSON
+      icon file code
+      children
+        - label 5.33 seconds; 111 tokens
+          icon clock
+    - label Read option logits
+      icon gauge
+      children
+        - label 1.02 seconds; no output tokens
+          icon lightning
+theme
+  palette #E98618 #2E9E52

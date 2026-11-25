@@ -34,3 +34,7 @@ See [`reports/COMPARISON_REPORT.md`](reports/COMPARISON_REPORT.md) for measured 
 ## License
 
 Original skill content retains its existing LICENSE. AntV Infographic is a separate MIT-licensed project: https://github.com/antvis/Infographic . We reference its API, DSL and package but have **not copied its source code into this repo**.
+
+
+### v13 mobile illustration experiment
+See `examples/jev-v13/` for twelve illustrated figures, accessible 1280px pan/zoom dialogs and browser test evidence. AntV runtime remains unavailable in the benchmark environment; this is not source-fidelity publication approval.

@@ -1,0 +1,18 @@
+infographic sequence-timeline-rounded-rect-node
+data
+  title From classifiers to decision models
+  sequences
+    - label Fixed-label classifier
+      desc Encoder and a trained fixed head
+      icon chart bar
+    - label NLI hypotheses
+      desc Score each candidate statement
+      icon message text
+    - label Letter logits
+      desc Read allowed token scores without decoding
+      icon code
+    - label Decision interface
+      desc Typed questions against shared context
+      icon layers
+theme
+  palette #2D92D5 #2E9E52 #E98618 #D82F79

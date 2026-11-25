@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "attention_weight": true,
+    "attention_output": true,
+    "softmax": true,
+    "loss": true,
+    "gradient": true,
+    "threshold": true,
+    "twelve_svg": true,
+    "twelve_toolbar": true,
+    "browser_desktop": true,
+    "browser_mobile": true
+  },
+  "browser": {
+    "desktop": {
+      "figures": 12,
+      "tools": 12,
+      "overflow": false,
+      "loaded": 2,
+      "opened": true,
+      "viewer": {
+        "visibleWidth": 1416,
+        "contentWidth": 1416,
+        "scrollPossible": false
+      },
+      "imgWidth": 1280,
+      "closed": true
+    },
+    "mobile": {
+      "figures": 12,
+      "tools": 12,
+      "overflow": false,
+      "loaded": 2,
+      "opened": true,
+      "viewer": {
+        "visibleWidth": 366,
+        "contentWidth": 1304,
+        "scrollPossible": true
+      },
+      "imgWidth": 1280,
+      "closed": true
+    }
+  },
+  "antv_runtime": "blocked: registry EAI_AGAIN",
+  "independent_generation_repeats": 0,
+  "source_fidelity_publication": "not passed"
+}
