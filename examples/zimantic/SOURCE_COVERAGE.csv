@@ -1,0 +1,12 @@
+section,source_path,fidelity,notes
+1. Orientation: what Zimantic does,README.md,source-derived,Source code inspected; figure and explanation are independently written
+2. ZIM decomposition and metadata,zimantic/zim.py,source-derived,Source code inspected; figure and explanation are independently written
+"3. SQLite schema, temporary vectors, and FAISS IDs",zimantic/build.py,source-derived,Source code inspected; figure and explanation are independently written
+"4. Embedding: tokens, pooling, and vector persistence",zimantic/embed.py,source-derived,Source code inspected; figure and explanation are independently written
+"5. Build transactions, checkpoints, and resume",zimantic/build.py,source-derived,Source code inspected; figure and explanation are independently written
+6. Flat versus IVF+SQ8 index policy,zimantic/build.py,source-derived,Source code inspected; figure and explanation are independently written
+"7. Query path, redirects, and reciprocal rank fusion",zimantic/search.py,source-derived,Source code inspected; figure and explanation are independently written
+"8. Threading, request serialization, and build parallelism",zimantic/server.py,source-derived,Source code inspected; figure and explanation are independently written
+"9. CPU cores, RAM, batch size, and performance",config.yaml,source-derived + labeled extrapolation,Source code inspected; figure and explanation are independently written
+10. Reproducible hardware experiments,evaluation/README.md,source-derived + labeled extrapolation,Source code inspected; figure and explanation are independently written
+"11. Limitations, pitfalls, and contribution roadmap",README.md,source-derived + labeled extrapolation,Source code inspected; figure and explanation are independently written

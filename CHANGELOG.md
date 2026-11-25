@@ -1,7 +1,7 @@
 # Changelog
 
-## v14 experimental
-- Added cross-topic rendered figure benchmark with PostgreSQL and attention microguides.
-- Added zoom/pan/keyboard dialog and source labels to independent topical examples.
-- Added a documented release gate for cross-topic visual quality and truthful AntV test status.
-- No claim of repeated independent LLM generation or AntV rendering.
+## v15 — Zimantic source reconstruction
+- Added pinned-commit repository analysis and data lineage workflow.
+- Explained code-level SQLite/FAISS identity, extraction, checkpoints, E5 embeddings, fusion, locks and hardware profiling.
+- Added 11-chapter illustrated example with ten SVG figures, mobile dialog viewer, synthetic executable fixtures, and explicit DRAFT status.
+- Preserved original general-purpose teaching and optional source audit modes.

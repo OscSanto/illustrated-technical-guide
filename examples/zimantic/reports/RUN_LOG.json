@@ -1,0 +1,45 @@
+{
+  "source_method": "GitHub connector read-only source fetch",
+  "source_commit": "40c404f6dd409dc0e1d80fb89f9212b99a8542f3",
+  "checks": [
+    {
+      "command": "python labs/verify_concepts.py",
+      "status": "passed",
+      "stdout": "{\n  \"schema\": {\n    \"docs\": 3,\n    \"redirect_target\": 1\n  },\n  \"rrf\": {\n    \"A\": 0.032796,\n    \"B\": 0.04918,\n    \"winner\": \"B\"\n  },\n  \"index\": {\n    \"9999\": \"flat\",\n    \"10000\": \"IVF400,SQ8\",\n    \"70000\": \"IVF1058,SQ8\"\n  }\n}\n"
+    },
+    {
+      "command": "Playwright Chromium desktop/mobile inlined SVG fixture",
+      "status": "passed",
+      "observations": {
+        "chapters": 11,
+        "figures": 10,
+        "missing_local_figures": [],
+        "broken_anchors": [],
+        "desktop": {
+          "title": "Zimantic \u2014 Illustrated Source Reconstruction",
+          "document_width": 1440,
+          "viewport_width": 1440,
+          "figure_count": 10,
+          "viewer_open": true,
+          "viewer_image_width": 1100,
+          "viewer_closed": true
+        },
+        "mobile": {
+          "title": "Zimantic \u2014 Illustrated Source Reconstruction",
+          "document_width": 390,
+          "viewport_width": 390,
+          "figure_count": 10,
+          "viewer_open": true,
+          "viewer_image_width": 1100,
+          "viewer_closed": true
+        }
+      }
+    }
+  ],
+  "not_run": [
+    "real ZIM indexing",
+    "ONNX model inference",
+    "FAISS retrieval",
+    "Raspberry Pi profiling"
+  ]
+}

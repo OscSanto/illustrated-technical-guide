@@ -1,0 +1,39 @@
+{
+  "status": "DRAFT",
+  "source_commit": "40c404f6dd409dc0e1d80fb89f9212b99a8542f3",
+  "chapters": 11,
+  "figures": 10,
+  "synthetic_fixture_pass": true,
+  "browser": {
+    "chapters": 11,
+    "figures": 10,
+    "missing_local_figures": [],
+    "broken_anchors": [],
+    "desktop": {
+      "title": "Zimantic \u2014 Illustrated Source Reconstruction",
+      "document_width": 1440,
+      "viewport_width": 1440,
+      "figure_count": 10,
+      "viewer_open": true,
+      "viewer_image_width": 1100,
+      "viewer_closed": true
+    },
+    "mobile": {
+      "title": "Zimantic \u2014 Illustrated Source Reconstruction",
+      "document_width": 390,
+      "viewport_width": 390,
+      "figure_count": 10,
+      "viewer_open": true,
+      "viewer_image_width": 1100,
+      "viewer_closed": true
+    }
+  },
+  "blockers": [
+    "Real ZIM and model inference not run",
+    "No actual Raspberry Pi memory/concurrency benchmark",
+    "Full source test suite not executed; read-only GitHub source inspection"
+  ],
+  "antv_rendered": false,
+  "source_fidelity": "Selective code-path audit; no complete repository test run",
+  "skill_regression_tests": "8 passed"
+}

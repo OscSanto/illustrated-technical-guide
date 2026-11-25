@@ -1,20 +1,16 @@
-# Illustrated Technical Guide v14 — Cross-topic visual benchmark (development build)
+# Illustrated Technical Guide v15 — Source-faithful repository reconstruction
 
-This is the v13 skill plus a **cross-topic transfer test**. It demonstrates the same figure design and zoom/pan controls for a PostgreSQL LEFT JOIN and a transformer attention numerical example.
+This preview preserves the v14 generic textbook generator and optional source reconstruction while adding `references/repository-reconstruction.md` for real codebases.
 
-## Open the examples
-- `examples/cross-topic-benchmark/postgresql/index.html`
-- `examples/cross-topic-benchmark/attention/index.html`
-- `reports/BENCHMARK_REPORT.md` (results and limitations)
-- `reports/BROWSER_RESULTS.json`, `reports/SCORECARD.csv` (machine-readable evidence)
+## New example
+Open `examples/zimantic/index.html` to study the [OscSanto/zimantic](https://github.com/OscSanto/zimantic) repository at commit `40c404f6dd409dc0e1d80fb89f9212b99a8542f3`.
 
-## Claims and boundaries
-- The custom SVGs render and the figure viewer works in desktop and mobile Chromium **using inlined SVG contents via page.set_content**; direct local and HTTP navigation are prohibited in this test runtime.
-- The Python attention example was executed. The SQL join result was cross-checked in SQLite only, **not PostgreSQL**.
-- The v13 pytest suite passes. AntV rendering did **not** run because registry access is blocked.
-- These are authored topic fixtures, **not independent model generations**. Neither cross-run reliability nor full Jev content accuracy is certified.
+The 11-chapter HTML guide contains 10 original offline SVGs, SQL/algorithm educational fixtures, a benchmark plan, source coverage, provenance and a mobile zoom viewer. It is DRAFT because real ZIM/ONNX and Raspberry Pi benchmarks were not executed here.
 
-The two independent skill capabilities remain unchanged: original educational guides and optional source-faithful reconstruction.
+## Install
+Copy `skills/illustrated-technical-guide/` into your Claude Code skills directory. The `SKILL.md` is the entry point; its `references/` and other files must remain alongside it.
 
-## Installation
-Copy `skills/illustrated-technical-guide` into your project's `.claude/skills` directory, including all referenced files, or retain this repository for tests and examples.
+## Run educational verification
+`python examples/zimantic/labs/verify_concepts.py`
+
+Existing v14 regression tests and evaluation suite are retained. New source reconstruction instructions live in `skills/illustrated-technical-guide/references/repository-reconstruction.md`.

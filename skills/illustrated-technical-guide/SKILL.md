@@ -2,11 +2,14 @@
 name: illustrated-technical-guide
 description: Create original deeply explained, illustrated, testable CS learning guides and HTML textbooks; optionally reconstruct a supplied technical article or paper faithfully with claim-level provenance. Use for hands-on tutorials, mathematical walkthroughs, architecture explainers, and source-audited reconstructions.
 ---
-# Illustrated Technical Guide v14 — Cross-topic visual validation
+# Illustrated Technical Guide v15 — Repository reconstruction benchmark
 
 ## Two independent capabilities
 - **Generate (default):** research and author an original, approachable, illustrated technical textbook from a topic. Do not require a reference article.
-- **Reconstruct (opt-in):** source-faithful educational reconstruction of a supplied article/paper/repository. Apply all common requirements PLUS the source fidelity workflow. Never infer proprietary internals.
+- **Reconstruct (opt-in):** source-faithful educational reconstruction of a supplied article/paper/repository. For code repositories, read `references/repository-reconstruction.md` first. Apply all common requirements PLUS the source fidelity workflow. Never infer proprietary internals.
+
+## Repository fidelity rule
+When a user links a code repository and requests how it works, activate source-audited repository reconstruction even if they never explicitly say “illustrated guide.” Inspect entry points and implementation rather than relying only on README. Produce actual data-lineage, storage, execution, concurrency and hardware-evidence maps when relevant. Preserve original code semantics and call out gaps.
 
 ## Start here — choose teaching profile
 Read `profiles/hands-on.md`, `profiles/conceptual.md`, `profiles/mathematical.md`, or `profiles/source-audit.md` based on the **learner's goal**, not an arbitrary topic category. Mix profiles by chapter as needed. Use `references/pedagogy.md` for learning objectives and prerequisite ordering. Do **not** require a derivation in a setup chapter or an installation walkthrough in a theory chapter. A guide can combine tutorial, explanation, how-to and reference, but label these purposes.

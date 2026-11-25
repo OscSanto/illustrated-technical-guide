@@ -1,0 +1,85 @@
+{
+  "source_repository": "https://github.com/OscSanto/zimantic",
+  "source_branch": "main",
+  "source_accessed": "2026-11-24",
+  "mode": "repository-reconstruction",
+  "status": "DRAFT",
+  "chapters": 11,
+  "figure_count": 10,
+  "figures": [
+    {
+      "id": "01-system-map",
+      "purpose": "Overall architecture",
+      "claim": "One ZIM produces one SQLite metadata index and one FAISS vector index; the service loads them for search.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "02-zim-decomposition",
+      "purpose": "ZIM entry classification",
+      "claim": "Separates true redirects, meta-refresh pages, HTML articles, and skipped MIME types.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "03-storage-schema",
+      "purpose": "SQLite and FAISS IDs",
+      "claim": "Identifies FTS5 column indexing, temporary vector blobs, redirect targets, and stable document IDs.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "04-embedding",
+      "purpose": "E5 embedding computation",
+      "claim": "A single first-paragraph representation, prefix, tokens, ONNX hidden states, and normalization.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "05-build-resume",
+      "purpose": "Atomic checkpoints",
+      "claim": "Distinguishes resumable SQLite batch commits from final FAISS persistence.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "06-faiss-policy",
+      "purpose": "Flat vs IVF+SQ8",
+      "claim": "Shows the actual 10,000 embedded-article threshold and cluster policy.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "07-query-fusion",
+      "purpose": "Three-way retrieval and RRF",
+      "claim": "Separates cosine, FTS5 BM25, and ZIM full-text ranking before fusion.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "08-server-lock",
+      "purpose": "Search concurrency",
+      "claim": "Explains the global mutex over search execution and avoids claiming parallel speedups.",
+      "origin": "Source-derived reconstruction"
+    },
+    {
+      "id": "09-resource-budget",
+      "purpose": "Hardware budget",
+      "claim": "Defines a proposed measurement framework, not measured hardware performance.",
+      "origin": "Our proposed analysis"
+    },
+    {
+      "id": "10-benchmark-design",
+      "purpose": "Controlled optimization",
+      "claim": "Shows how to isolate variables when profiling Zimantic.",
+      "origin": "Our proposed experiment"
+    }
+  ],
+  "files_read": [
+    "README.md",
+    "zimantic/__main__.py",
+    "zimantic/zim.py",
+    "zimantic/build.py",
+    "zimantic/embed.py",
+    "zimantic/search.py",
+    "zimantic/server.py",
+    "config.yaml",
+    "evaluation/README.md"
+  ],
+  "runtime_coverage": "educational fixture only, no ZIM or ONNX inference",
+  "hardware_measured": false,
+  "source_commit": "40c404f6dd409dc0e1d80fb89f9212b99a8542f3"
+}
