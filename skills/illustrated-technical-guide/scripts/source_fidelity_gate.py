@@ -18,9 +18,9 @@ class Parse(HTMLParser):
 
 def audit(root,html,manifest='artifact_provenance.json'):
  errors=[];warnings=[]
- try: data=json.loads((root/manifest).read_text())
+ try: data=json.loads((root/manifest).read_text(encoding='utf-8'))
  except Exception as e:return {'status':'FAIL','blockers':[f'Missing/unreadable provenance manifest: {e}'],'warnings':[],'metrics':{}}
- try:p=Parse();p.feed((root/html).read_text())
+ try:p=Parse();p.feed((root/html).read_text(encoding='utf-8'))
  except Exception as e:return {'status':'FAIL','blockers':[f'HTML unreadable: {e}'],'warnings':[],'metrics':{}}
  if len(p.ids)!=len(set(p.ids)):errors.append('Duplicate HTML IDs')
  arts=data.get('artifacts',[])
@@ -41,7 +41,7 @@ def audit(root,html,manifest='artifact_provenance.json'):
    if node['attrs'].get('data-verification')!=status:errors.append(f'{ident}: HTML data-verification disagrees with manifest')
   if not a.get('visible_label') or not a.get('visible_label_in_html',False):errors.append(f'{ident}: missing visible origin label or evidence of label')
   # A text search is an additional guard against falsely declaring visible_label_in_html=true.
-  if a.get('visible_label') and a['visible_label'] not in (root/html).read_text():errors.append(f'{ident}: declared visible label not present in HTML')
+  if a.get('visible_label') and a['visible_label'] not in (root/html).read_text(encoding='utf-8'):errors.append(f'{ident}: declared visible label not present in HTML')
   if not a.get('explanation'):errors.append(f'{ident}: missing provenance explanation')
   if kind in {'source_reproduction','source_adaptation','independent_verification'}:
    if not a.get('source_url') or not a.get('source_locator'):errors.append(f'{ident}: source origin lacks precise URL/locator')
