@@ -1,0 +1,86 @@
+{
+  "postgresql": {
+    "desktop": {
+      "svg_loaded": true,
+      "page_overflow": false,
+      "viewer_open": true,
+      "svg_width_in_viewer": 1120,
+      "native_svg_width": 1120,
+      "mobile_pan": true,
+      "keyboard_close": true,
+      "focus_restored": true
+    },
+    "mobile": {
+      "svg_loaded": true,
+      "page_overflow": false,
+      "viewer_open": true,
+      "svg_width_in_viewer": 1120,
+      "native_svg_width": 1120,
+      "mobile_pan": true,
+      "keyboard_close": true,
+      "focus_restored": true
+    }
+  },
+  "attention": {
+    "desktop": {
+      "svg_loaded": true,
+      "page_overflow": false,
+      "viewer_open": true,
+      "svg_width_in_viewer": 1120,
+      "native_svg_width": 1120,
+      "mobile_pan": true,
+      "keyboard_close": true,
+      "focus_restored": true
+    },
+    "mobile": {
+      "svg_loaded": true,
+      "page_overflow": false,
+      "viewer_open": true,
+      "svg_width_in_viewer": 1120,
+      "native_svg_width": 1120,
+      "mobile_pan": true,
+      "keyboard_close": true,
+      "focus_restored": true
+    }
+  },
+  "numerical_and_sql": {
+    "attention_python": "EXECUTED PASS",
+    "postgres_join": "SQLITE CROSS-CHECK PASS; PostgreSQL not executed",
+    "rows": [
+      [
+        "Ada",
+        101,
+        30
+      ],
+      [
+        "Ada",
+        102,
+        22
+      ],
+      [
+        "Ben",
+        103,
+        12
+      ],
+      [
+        "Cleo",
+        null,
+        null
+      ]
+    ]
+  },
+  "regression": {
+    "illustration_script": 0,
+    "pytest": 0,
+    "pytest_last_lines": "........                                                                 [100%]\n8 passed in 0.06s\n",
+    "stderr": ""
+  },
+  "antv": {
+    "status": "NOT_EXECUTED",
+    "reason": "npm registry DNS EAI_AGAIN"
+  },
+  "independent_ai_runs": {
+    "status": "NOT_PERFORMED",
+    "reason": "These are two deterministic topic fixtures, not repeated model generations"
+  }
+}

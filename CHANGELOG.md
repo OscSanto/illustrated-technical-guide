@@ -1,18 +1,7 @@
-## v13
-- All 12 Jev illustration slots redesigned or retained as consistent editable SVG.
-- Added responsive figure viewer standard and actual Chromium desktop/mobile benchmark.
-- AntV rendering remains unverified; custom SVG is still the production fallback.
-
 # Changelog
-## v11.0.0 — modular reliability foundation
-- Split v10 monolithic instructions into four teaching profiles and focused reference documents.
-- Added profile-aware publication gate, milestone validation, code evidence and mandatory provenance checks.
-- Added eight-topic evaluation definitions, outcome rubric and a local scoring harness that does not pretend to run an LLM.
-- Preserved optional source-faithful reconstruction workflow and v10 validators.
-- Included two legacy draft HTML examples with explicit limitations.
 
-## v12 experimental preview — AntV illustration selection
-- Added optional AntV Infographic renderer-selection instructions, palette and typography system, with precise SVG fallback.
-- Added three technical pairwise visual candidates with original offline SVG figures and AntV DSL.
-- Added arithmetic/data fixtures, SVG/DSL smoke checks and validation report.
-- AntV rendering **not tested** owing to unavailable npm/CDN; default-engine recommendation remains conditional.
+## v14 experimental
+- Added cross-topic rendered figure benchmark with PostgreSQL and attention microguides.
+- Added zoom/pan/keyboard dialog and source labels to independent topical examples.
+- Added a documented release gate for cross-topic visual quality and truthful AntV test status.
+- No claim of repeated independent LLM generation or AntV rendering.

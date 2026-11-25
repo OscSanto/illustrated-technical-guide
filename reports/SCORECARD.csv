@@ -1,0 +1,5 @@
+topic,viewport,svg_loaded,no_page_overflow,viewer,native_size,mobile_pan,esc_and_focus
+postgresql,desktop,True,True,True,1120,True,True
+postgresql,mobile,True,True,True,1120,True,True
+attention,desktop,True,True,True,1120,True,True
+attention,mobile,True,True,True,1120,True,True

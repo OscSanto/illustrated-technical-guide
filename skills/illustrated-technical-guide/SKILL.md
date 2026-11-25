@@ -2,7 +2,7 @@
 name: illustrated-technical-guide
 description: Create original deeply explained, illustrated, testable CS learning guides and HTML textbooks; optionally reconstruct a supplied technical article or paper faithfully with claim-level provenance. Use for hands-on tutorials, mathematical walkthroughs, architecture explainers, and source-audited reconstructions.
 ---
-# Illustrated Technical Guide v13 — Responsive technical figures
+# Illustrated Technical Guide v14 — Cross-topic visual validation
 
 ## Two independent capabilities
 - **Generate (default):** research and author an original, approachable, illustrated technical textbook from a topic. Do not require a reference article.
@@ -18,8 +18,9 @@ Read `profiles/hands-on.md`, `profiles/conceptual.md`, `profiles/mathematical.md
 4. **Implement exercises and verification.** Read `references/execution.md`. In hands-on chapters, every milestone yields observable results plus troubleshooting. Distinguish executable/tested, executable/untested and pseudocode; always identify what code was created by us vs. adapted from a source.
 5. **Make every artifact traceable.** Read `references/source-fidelity.md`. Visible origin labels for code, pseudocode, equations, datasets, architecture diagrams, tables and benchmarks, with machine-readable metadata. In reconstruct mode, claim-by-claim coverage and uncertainty are mandatory.
 6. **Publish responsive standalone HTML.** Use `templates/standalone.html` as a starting point, with generated nested TOC, accessible headings, offline-readable formulas, labeled diagrams, per-figure zoom/pan for dense SVGs, downloadable labs, mobile layout, and source links. Original authoring files may be modular; the final HTML export should be portable.
-7. **Gate and repair.** Run `python scripts/quality_gate.py --guide <guide-directory>`. Run actual code tests and inspect real browser screenshots when available. Resolve blockers in up to 3 repair cycles, writing `REPAIR_LOG.md` with evidence. If unverified, publish clearly as DRAFT; never flip evidence fields merely to pass.
-8. **Evaluate transfer.** Refer to `../../../evals/README.md` in the repository and run multiple unrelated prompt cases across repeated independent generations. CI-only structural PASS is not an LLM consistency score.
+7. **Cross-topic figure gate.** For any new illustration engine or style, test at least two unrelated topic mechanisms (for example database joins and attention). Use numeric or relational assertions, desktop and mobile rendered screenshots, visible provenance, functional keyboard/zoom controls, and report whether any external renderer was actually executed. Distinguish hand-built fixtures from independent model generations. See `references/cross-topic-visual-evaluation.md`.
+8. **Gate and repair.** Run `python scripts/quality_gate.py --guide <guide-directory>`. Run actual code tests and inspect real browser screenshots when available. Resolve blockers in up to 3 repair cycles, writing `REPAIR_LOG.md` with evidence. If unverified, publish clearly as DRAFT; never flip evidence fields merely to pass.
+9. **Evaluate transfer.** Refer to `../../../evals/README.md` in the repository and run multiple unrelated prompt cases across repeated independent generations. CI-only structural PASS is not an LLM consistency score.
 
 ## Output contract
 Produce: `index.html`, `guide_manifest.json`, `artifact_provenance.json`, `research_inventory.json`, `figure_storyboard.json`, runnable labs as appropriate, `RUN_LOG.json` with real commands/results, and `QUALITY_REPORT.json`/`.md`. Add `source_coverage.csv` in reconstruct mode. Each critical omitted item remains a blocker. Cite docs in the guide where a fact is used.
