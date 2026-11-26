@@ -9,7 +9,6 @@ Copy `skills/illustrated-technical-guide/` into your Claude Code skills director
 
 **Optional companion skills.** The skill works fully without them and falls back to hand-written SVG:
 - [dashmotion](https://github.com/csthink/dashmotion) (MIT). It adds animated flow figures (dots travelling through a system). Install it with `npx skills add csthink/dashmotion -a claude-code -g`. See `references/animated-flow-figures.md`.
-- [AntV Infographic](https://github.com/antvis/Infographic) (MIT). It is experimental and untested. See `references/antv-illustration-engine.md`.
 
 ## What's in the skill
 - `SKILL.md`: the working agreement, step by step.
