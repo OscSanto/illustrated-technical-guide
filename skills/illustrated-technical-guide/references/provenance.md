@@ -37,4 +37,4 @@ Before drafting in source-audit mode, inventory *all material* article sections,
 
 Run `python scripts/source_fidelity_gate.py --root <guide-dir> --html index.html` and `python scripts/publication_gate.py --root <guide-dir> --html index.html`. Both must pass before declaring publication ready. The source fidelity gate performs **structural** checks; its PASS is not proof that source claims are true. A human/independent semantic comparison and actual code execution remain separate mandatory reviews. If evidence is unavailable, publish **DRAFT / FAIL** with honest gaps.
 
-`examples/provenance-fixture/` demonstrates a structurally passing provenance manifest with clearly labeled hypothetical examples; it is not a Jev fidelity validation. `examples/jev-source-audit/` remains intentionally failing until full source inventory and article-by-article comparison are performed.
+`examples/provenance-fixture/` demonstrates a structurally passing provenance manifest with clearly labeled hypothetical examples; it is not a Jev fidelity validation.
