@@ -1,5 +1,11 @@
 # Provenance standard
 
+## In brief
+- Every visible figure, math derivation, code or pseudocode block, data table, API example and reported metric is labeled as source reproduction or adaptation, independent verification, our derivation or implementation, hypothetical, or unverified.
+- "Our implementation · Pseudocode" is never passed off as the source's code.
+- An official API example needs a verified version, endpoint, fields and docs URL. A benchmark number needs provenance and a recorded test environment.
+- In source-audit mode, every critical source item gets an explicit coverage disposition and a faithful comparison.
+- The provenance gate is structural: it detects missing or unsupported metadata, but it cannot do a factual peer review.
 
 ## Mandatory source fidelity and provenance contract
 
