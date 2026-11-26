@@ -1,6 +1,9 @@
 ---
 name: illustrated-technical-guide
-description: Create original deeply explained, illustrated, testable CS learning guides and HTML textbooks; optionally reconstruct a supplied technical article or paper faithfully with claim-level provenance. Use for hands-on tutorials, mathematical walkthroughs, architecture explainers, and source-audited reconstructions.
+description: Writes deep, illustrated, tested explanations of how a technical system works
+  (models, algorithms, databases, protocols, code repositories) as one offline HTML guide
+  with labs, figures and cited claims. Use when someone asks how something works
+  "in depth", "mechanically" or "step by step", or asks to explain a repository or paper.
 ---
 # Illustrated Technical Guide — depth-first illustrated technical teaching
 
